@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="litvinov" id="1.1">
+        <createTable tableName="PERSON">
+            <column name="ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FIRST_NAME" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LAST_NAME" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="litvinov" id="1.2">
+        <addPrimaryKey columnNames="ID" constraintName="id_PK" tableName="PERSON"/>
+    </changeSet>
+    <changeSet author="liquibase-docs" id="addAutoIncrement-example">
+        <addAutoIncrement columnDataType="int"
+                          columnName="ID"
+                          incrementBy="1"
+                          startWith="1"
+                          tableName="PERSON"/>
+    </changeSet>
+</databaseChangeLog>
