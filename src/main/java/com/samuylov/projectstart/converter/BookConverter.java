@@ -1,6 +1,6 @@
 package com.samuylov.projectstart.converter;
 
-import com.samuylov.projectstart.dbo.BookDbo;
+import com.samuylov.projectstart.entity.BookDbo;
 import com.samuylov.projectstart.dto.BookDto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

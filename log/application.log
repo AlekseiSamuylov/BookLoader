@@ -1,35 +1,43 @@
-2018-12-21 10:53:55.230  INFO 9820 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 9820 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
-2018-12-21 10:53:55.236  INFO 9820 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
-2018-12-21 10:53:55.959  INFO 9820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-12-21 10:53:55.983  INFO 9820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15ms. Found 0 repository interfaces.
-2018-12-21 10:53:56.295  INFO 9820 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d98c7922] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-12-21 10:53:56.652  INFO 9820 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
-2018-12-21 10:53:56.674  INFO 9820 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-12-21 10:53:56.674  INFO 9820 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2018-12-21 10:53:56.683  INFO 9820 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Soft\Git\cmd;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;.]
-2018-12-21 10:53:56.821  INFO 9820 --- [main] o.a.c.c.C.[.[.[/projectStartDemo/rest]   : Initializing Spring embedded WebApplicationContext
-2018-12-21 10:53:56.821  INFO 9820 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1532 ms
-2018-12-21 10:53:56.950  WARN 9820 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-2018-12-21 10:53:56.952  INFO 9820 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-12-21 10:53:56.969  INFO 9820 --- [main] ConditionEvaluationReportLoggingListener : 
+2018-12-29 11:47:00.682  INFO 4884 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 4884 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
+2018-12-29 11:47:00.703 DEBUG 4884 --- [main] c.s.p.ProjectStartApplication            : Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-29 11:47:00.705  INFO 4884 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
+2018-12-29 11:47:01.587  INFO 4884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-29 11:47:01.654  INFO 4884 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 1 repository interfaces.
+2018-12-29 11:47:02.023  INFO 4884 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b4222ae4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-29 11:47:02.324  INFO 4884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2018-12-29 11:47:02.347  INFO 4884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-29 11:47:02.348  INFO 4884 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-29 11:47:02.355  INFO 4884 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Apache\maven\bin;;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.1\bin;;.]
+2018-12-29 11:47:03.032  INFO 4884 --- [main] o.a.c.c.C.[.[.[/project-start/rest]      : Initializing Spring embedded WebApplicationContext
+2018-12-29 11:47:03.032  INFO 4884 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2273 ms
+2018-12-29 11:47:03.155  INFO 4884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-12-29 11:47:03.304  INFO 4884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-12-29 11:47:04.168  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOGLOCK
+2018-12-29 11:47:04.175  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOGLOCK
+2018-12-29 11:47:04.177  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM project_start_demo.DATABASECHANGELOGLOCK WHERE ID=1
+2018-12-29 11:47:04.317  INFO 4884 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2018-12-29 11:47:05.491  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM project_start_demo.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2018-12-29 11:47:05.492  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : UPDATE project_start_demo.DATABASECHANGELOG SET MD5SUM = NULL
+2018-12-29 11:47:05.500  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOG
+2018-12-29 11:47:05.501  INFO 4884 --- [main] l.c.StandardChangeLogHistoryService      : Reading from project_start_demo.DATABASECHANGELOG
+2018-12-29 11:47:05.501  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM project_start_demo.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2018-12-29 11:47:05.512  INFO 4884 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)
+2018-12-29 11:47:05.529 ERROR 4884 --- [main] liquibase.changelog.ChangeSet            : Change Set classpath:/db/changelog/1-add-initial-book-table.xml::1.1::samuylov failed.  Error: Table 'book' already exists [Failed SQL: CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)]
+2018-12-29 11:47:05.536  INFO 4884 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2018-12-29 11:47:05.537  WARN 4884 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:/db/changelog/1-add-initial-book-table.xml::1.1::samuylov:
+     Reason: liquibase.exception.DatabaseException: Table 'book' already exists [Failed SQL: CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)]
+2018-12-29 11:47:05.537  INFO 4884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-12-29 11:47:05.542  INFO 4884 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-12-29 11:47:05.545  INFO 4884 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-12-29 11:47:05.558  INFO 4884 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-12-21 10:53:56.982 ERROR 9820 --- [main] o.s.boot.SpringApplication               : Application run failed
+2018-12-29 11:47:05.573 ERROR 4884 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:139) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1737) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.MigrationFailedException: Migration failed for change set classpath:/db/changelog/1-add-initial-book-table.xml::1.1::samuylov:
+     Reason: liquibase.exception.DatabaseException: Table 'book' already exists [Failed SQL: CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
@@ -47,50 +55,264 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
 	at com.samuylov.projectstart.ProjectStartApplication.main(ProjectStartApplication.java:10) [classes/:na]
-Caused by: java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-	at org.springframework.util.Assert.state(Assert.java:94) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.checkChangelogExists(LiquibaseAutoConfiguration.java:110) ~[spring-boot-autoconfigure-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	... 29 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for change set classpath:/db/changelog/1-add-initial-book-table.xml::1.1::samuylov:
+     Reason: liquibase.exception.DatabaseException: Table 'book' already exists [Failed SQL: CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:637) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:53) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:78) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:202) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:179) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:353) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:305) ~[liquibase-core-3.6.2.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 18 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Table 'book' already exists [Failed SQL: CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:356) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:57) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:125) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1229) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1211) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:600) ~[liquibase-core-3.6.2.jar:na]
+	... 26 common frames omitted
+Caused by: java.sql.SQLSyntaxErrorException: Table 'book' already exists
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:782) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:666) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:352) ~[liquibase-core-3.6.2.jar:na]
+	... 31 common frames omitted
 
-2018-12-21 10:56:06.851  INFO 5492 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 5492 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
-2018-12-21 10:56:06.862  INFO 5492 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
-2018-12-21 10:56:07.524  INFO 5492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-12-21 10:56:07.543  INFO 5492 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13ms. Found 0 repository interfaces.
-2018-12-21 10:56:07.816  INFO 5492 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4729781] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-12-21 10:56:08.142  INFO 5492 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
-2018-12-21 10:56:08.169  INFO 5492 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-12-21 10:56:08.170  INFO 5492 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2018-12-21 10:56:08.177  INFO 5492 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Soft\Git\cmd;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;.]
-2018-12-21 10:56:08.319  INFO 5492 --- [main] o.a.c.c.C.[.[.[/projectStartDemo/rest]   : Initializing Spring embedded WebApplicationContext
-2018-12-21 10:56:08.319  INFO 5492 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1419 ms
-2018-12-21 10:56:08.439  WARN 5492 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-2018-12-21 10:56:08.442  INFO 5492 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-12-21 10:56:08.462  INFO 5492 --- [main] ConditionEvaluationReportLoggingListener : 
+2018-12-29 11:51:53.866  INFO 8784 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 8784 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
+2018-12-29 11:51:53.870 DEBUG 8784 --- [main] c.s.p.ProjectStartApplication            : Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-29 11:51:53.872  INFO 8784 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
+2018-12-29 11:51:54.518  INFO 8784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-29 11:51:54.575  INFO 8784 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 1 repository interfaces.
+2018-12-29 11:51:54.855  INFO 8784 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$42357030] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-29 11:51:55.111  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2018-12-29 11:51:55.130  INFO 8784 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-29 11:51:55.131  INFO 8784 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-29 11:51:55.136  INFO 8784 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Apache\maven\bin;;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.1\bin;;.]
+2018-12-29 11:51:55.235  INFO 8784 --- [main] o.a.c.c.C.[.[.[/project-start/rest]      : Initializing Spring embedded WebApplicationContext
+2018-12-29 11:51:55.236  INFO 8784 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1305 ms
+2018-12-29 11:51:55.329  INFO 8784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-12-29 11:51:55.427  INFO 8784 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-12-29 11:51:56.002  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOGLOCK
+2018-12-29 11:51:56.007  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOGLOCK
+2018-12-29 11:51:56.009  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM project_start_demo.DATABASECHANGELOGLOCK WHERE ID=1
+2018-12-29 11:51:56.075  INFO 8784 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2018-12-29 11:51:56.663  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM project_start_demo.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2018-12-29 11:51:56.664  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOG
+2018-12-29 11:51:56.665  INFO 8784 --- [main] l.c.StandardChangeLogHistoryService      : Reading from project_start_demo.DATABASECHANGELOG
+2018-12-29 11:51:56.665  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM project_start_demo.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2018-12-29 11:51:56.674  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : CREATE TABLE project_start_demo.BOOK (ID INT NOT NULL, NAME VARCHAR(64) NOT NULL, `DESCRIPTION` VARCHAR(64) NOT NULL)
+2018-12-29 11:51:56.746  INFO 8784 --- [main] liquibase.changelog.ChangeSet            : Table BOOK created
+2018-12-29 11:51:56.746  INFO 8784 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/1-add-initial-book-table.xml::1.1::samuylov ran successfully in 73ms
+2018-12-29 11:51:56.747  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MAX(ORDEREXECUTED) FROM project_start_demo.DATABASECHANGELOG
+2018-12-29 11:51:56.750  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO project_start_demo.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1.1', 'samuylov', 'classpath:/db/changelog/1-add-initial-book-table.xml', NOW(), 6, '8:698d317728b4a4cd3e6303313adb94ea', 'createTable tableName=BOOK', '', 'EXECUTED', NULL, NULL, '3.6.2', '6073516667')
+2018-12-29 11:51:56.757  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE project_start_demo.BOOK ADD PRIMARY KEY (ID)
+2018-12-29 11:51:56.842  INFO 8784 --- [main] liquibase.changelog.ChangeSet            : Primary key added to BOOK (ID)
+2018-12-29 11:51:56.843  INFO 8784 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/1-add-initial-book-table.xml::1.2::samuylov ran successfully in 87ms
+2018-12-29 11:51:56.844  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO project_start_demo.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('1.2', 'samuylov', 'classpath:/db/changelog/1-add-initial-book-table.xml', NOW(), 7, '8:3f4e2bd2618899848c0be3a55457ab3c', 'addPrimaryKey constraintName=id_PK, tableName=BOOK', '', 'EXECUTED', NULL, NULL, '3.6.2', '6073516667')
+2018-12-29 11:51:56.850  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE project_start_demo.PERSON MODIFY ID INT AUTO_INCREMENT
+2018-12-29 11:51:56.863  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : ALTER TABLE project_start_demo.PERSON AUTO_INCREMENT=1
+2018-12-29 11:51:56.877  INFO 8784 --- [main] liquibase.changelog.ChangeSet            : Auto-increment added to PERSON.ID
+2018-12-29 11:51:56.878  INFO 8784 --- [main] liquibase.changelog.ChangeSet            : ChangeSet classpath:/db/changelog/1-add-initial-book-table.xml::addAutoIncrement-example::liquibase-docs ran successfully in 29ms
+2018-12-29 11:51:56.879  INFO 8784 --- [main] liquibase.executor.jvm.JdbcExecutor      : INSERT INTO project_start_demo.DATABASECHANGELOG (ID, AUTHOR, FILENAME, DATEEXECUTED, ORDEREXECUTED, MD5SUM, `DESCRIPTION`, COMMENTS, EXECTYPE, CONTEXTS, LABELS, LIQUIBASE, DEPLOYMENT_ID) VALUES ('addAutoIncrement-example', 'liquibase-docs', 'classpath:/db/changelog/1-add-initial-book-table.xml', NOW(), 8, '8:c633805b7ffe56ddcfd5b9bad1f22490', 'addAutoIncrement columnName=ID, tableName=PERSON', '', 'EXECUTED', NULL, NULL, '3.6.2', '6073516667')
+2018-12-29 11:51:56.899  INFO 8784 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2018-12-29 11:51:56.999  INFO 8784 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-12-29 11:51:57.049  INFO 8784 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2018-12-29 11:51:57.050  INFO 8784 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-12-29 11:51:57.171  INFO 8784 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2018-12-29 11:51:57.280  INFO 8784 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-12-29 11:51:57.885  INFO 8784 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-12-29 11:51:58.281  INFO 8784 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2018-12-29 11:51:58.325  WARN 8784 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-12-29 11:51:58.735  INFO 8784 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8090 (http) with context path '/project-start/rest'
+2018-12-29 11:51:58.738  INFO 8784 --- [main] c.s.p.ProjectStartApplication            : Started ProjectStartApplication in 5.317 seconds (JVM running for 6.101)
+2018-12-29 11:52:08.689  INFO 8784 --- [http-nio-8090-exec-2] o.a.c.c.C.[.[.[/project-start/rest]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2018-12-29 11:52:08.689  INFO 8784 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2018-12-29 11:52:08.699  INFO 8784 --- [http-nio-8090-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2018-12-29 11:52:08.781  INFO 8784 --- [http-nio-8090-exec-2] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-12-29 11:52:17.204  WARN 8784 --- [http-nio-8090-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1364, SQLState: HY000
+2018-12-29 11:52:17.204 ERROR 8784 --- [http-nio-8090-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : Field 'ID' doesn't have a default value
+2018-12-29 11:52:17.226 ERROR 8784 --- [http-nio-8090-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/project-start/rest] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement] with root cause
+
+java.sql.SQLException: Field 'ID' doesn't have a default value
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:974) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1113) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1381) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1046) ~[mysql-connector-java-8.0.13.jar:8.0.13]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:57) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:42) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3072) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3663) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:81) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:359) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:292) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:200) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:131) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.saveTransientEntity(DefaultMergeEventListener.java:255) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:235) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:301) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:170) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:69) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:901) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:887) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_191]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:350) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at com.sun.proxy.$Proxy88.merge(Unknown Source) ~[na:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_191]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:308) ~[spring-orm-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at com.sun.proxy.$Proxy88.merge(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:492) ~[spring-data-jpa-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_191]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:359) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:200) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:644) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:608) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$invoke$3(RepositoryFactorySupport.java:595) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:595) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:59) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:294) ~[spring-tx-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at com.sun.proxy.$Proxy90.save(Unknown Source) ~[na:na]
+	at com.samuylov.projectstart.service.BookService.createBook(BookService.java:24) ~[classes/:na]
+	at com.samuylov.projectstart.controller.BookController.createBook(BookController.java:23) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[na:1.8.0_191]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882) ~[spring-webmvc-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:791) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.8.0_191]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.8.0_191]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.13.jar:9.0.13]
+	at java.lang.Thread.run(Unknown Source) [na:1.8.0_191]
+
+2018-12-29 11:52:49.351  INFO 588 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 588 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
+2018-12-29 11:52:49.354 DEBUG 588 --- [main] c.s.p.ProjectStartApplication            : Running with Spring Boot v2.1.1.RELEASE, Spring v5.1.3.RELEASE
+2018-12-29 11:52:49.356  INFO 588 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
+2018-12-29 11:52:50.128  INFO 588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2018-12-29 11:52:50.186  INFO 588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 1 repository interfaces.
+2018-12-29 11:52:50.465  INFO 588 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6b2bd3fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-29 11:52:50.718  INFO 588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
+2018-12-29 11:52:50.736  INFO 588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-29 11:52:50.737  INFO 588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
+2018-12-29 11:52:50.742  INFO 588 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Apache\maven\bin;;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.1\bin;;.]
+2018-12-29 11:52:50.844  INFO 588 --- [main] o.a.c.c.C.[.[.[/project-start/rest]      : Initializing Spring embedded WebApplicationContext
+2018-12-29 11:52:50.845  INFO 588 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1439 ms
+2018-12-29 11:52:50.940  INFO 588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-12-29 11:52:51.034  INFO 588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-12-29 11:52:51.594  INFO 588 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOGLOCK
+2018-12-29 11:52:51.600  INFO 588 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOGLOCK
+2018-12-29 11:52:51.601  INFO 588 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT `LOCKED` FROM project_start_demo.DATABASECHANGELOGLOCK WHERE ID=1
+2018-12-29 11:52:51.685  INFO 588 --- [main] l.lockservice.StandardLockService        : Successfully acquired change log lock
+2018-12-29 11:52:52.244  INFO 588 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT MD5SUM FROM project_start_demo.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1
+2018-12-29 11:52:52.245  INFO 588 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT COUNT(*) FROM project_start_demo.DATABASECHANGELOG
+2018-12-29 11:52:52.246  INFO 588 --- [main] l.c.StandardChangeLogHistoryService      : Reading from project_start_demo.DATABASECHANGELOG
+2018-12-29 11:52:52.246  INFO 588 --- [main] liquibase.executor.jvm.JdbcExecutor      : SELECT * FROM project_start_demo.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC
+2018-12-29 11:52:52.263  INFO 588 --- [main] l.lockservice.StandardLockService        : Successfully released change log lock
+2018-12-29 11:52:52.264  WARN 588 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:/db/changelog/1-add-initial-book-table.xml::addAutoIncrement-example::liquibase-docs was: 8:c633805b7ffe56ddcfd5b9bad1f22490 but is now: 8:f61f119a1d522756cdf2ffddeefa84b0
+
+2018-12-29 11:52:52.265  INFO 588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-12-29 11:52:52.268  INFO 588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-12-29 11:52:52.270  INFO 588 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-12-29 11:52:52.281  INFO 588 --- [main] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-12-21 10:56:08.478 ERROR 5492 --- [main] o.s.boot.SpringApplication               : Application run failed
+2018-12-29 11:52:52.290 ERROR 588 --- [main] o.s.boot.SpringApplication               : Application run failed
 
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:139) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1737) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Invocation of init method failed; nested exception is liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:/db/changelog/1-add-initial-book-table.xml::addAutoIncrement-example::liquibase-docs was: 8:c633805b7ffe56ddcfd5b9bad1f22490 but is now: 8:f61f119a1d522756cdf2ffddeefa84b0
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
@@ -108,112 +330,16 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
 	at com.samuylov.projectstart.ProjectStartApplication.main(ProjectStartApplication.java:10) [classes/:na]
-Caused by: java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-	at org.springframework.util.Assert.state(Assert.java:94) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.checkChangelogExists(LiquibaseAutoConfiguration.java:110) ~[spring-boot-autoconfigure-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	... 29 common frames omitted
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 change sets check sum
+          classpath:/db/changelog/1-add-initial-book-table.xml::addAutoIncrement-example::liquibase-docs was: 8:c633805b7ffe56ddcfd5b9bad1f22490 but is now: 8:f61f119a1d522756cdf2ffddeefa84b0
 
-2018-12-21 13:37:50.168  INFO 5088 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 5088 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
-2018-12-21 13:37:50.178  INFO 5088 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
-2018-12-21 13:37:51.050  INFO 5088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-12-21 13:37:51.080  INFO 5088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
-2018-12-21 13:37:51.546  INFO 5088 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4b58d79e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-12-21 13:37:52.066  INFO 5088 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
-2018-12-21 13:37:52.105  INFO 5088 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-12-21 13:37:52.106  INFO 5088 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2018-12-21 13:37:52.115  INFO 5088 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Soft\Git\cmd;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;.]
-2018-12-21 13:37:52.359  INFO 5088 --- [main] o.a.c.c.C.[.[.[/projectStartDemo/rest]   : Initializing Spring embedded WebApplicationContext
-2018-12-21 13:37:52.360  INFO 5088 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2124 ms
-2018-12-21 13:37:52.484 ERROR 5088 --- [main] com.zaxxer.hikari.HikariConfig           : Failed to load driver class com.mysql.cj.jdbc.Driver from HikariConfig class classloader jdk.internal.loader.ClassLoaders$AppClassLoader@5fa7e7ff
-2018-12-21 13:37:52.486  WARN 5088 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration$$EnhancerBySpringCGLIB$$4cdf5bd5]: Constructor threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource
-2018-12-21 13:37:52.490  INFO 5088 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-12-21 13:37:52.514  INFO 5088 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-12-21 13:37:52.519 ERROR 5088 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Failed to bind properties under '' to com.zaxxer.hikari.HikariDataSource:
-
-    Property: driverclassname
-    Value: com.mysql.cj.jdbc.Driver
-    Origin: "driverClassName" from property source "source"
-    Reason: Failed to load driver class com.mysql.cj.jdbc.Driver in either of HikariConfig class loader or Thread context classloader
-
-Action:
-
-Update your application's configuration
-
-2018-12-21 13:43:26.613  INFO 6708 --- [main] c.s.p.ProjectStartApplication            : Starting ProjectStartApplication on DESKTOP-H1QOIRC with PID 6708 (F:\Courses\project-start\target\classes started by Keeper in F:\Courses\project-start)
-2018-12-21 13:43:26.617  INFO 6708 --- [main] c.s.p.ProjectStartApplication            : No active profile set, falling back to default profiles: default
-2018-12-21 13:43:27.344  INFO 6708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2018-12-21 13:43:27.363  INFO 6708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11ms. Found 0 repository interfaces.
-2018-12-21 13:43:27.647  INFO 6708 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3b57d8c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2018-12-21 13:43:27.964  INFO 6708 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8090 (http)
-2018-12-21 13:43:27.986  INFO 6708 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2018-12-21 13:43:27.986  INFO 6708 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.13
-2018-12-21 13:43:27.993  INFO 6708 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Soft\Git\cmd;C:\Users\Keeper\AppData\Local\Microsoft\WindowsApps;;.]
-2018-12-21 13:43:28.148  INFO 6708 --- [main] o.a.c.c.C.[.[.[/projectStartDemo/rest]   : Initializing Spring embedded WebApplicationContext
-2018-12-21 13:43:28.149  INFO 6708 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1477 ms
-2018-12-21 13:43:28.253  WARN 6708 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-2018-12-21 13:43:28.255  INFO 6708 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2018-12-21 13:43:28.268  INFO 6708 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2018-12-21 13:43:28.277 ERROR 6708 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration': Invocation of init method failed; nested exception is java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:139) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:419) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1737) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:307) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546) ~[spring-context-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at com.samuylov.projectstart.ProjectStartApplication.main(ProjectStartApplication.java:10) [classes/:na]
-Caused by: java.lang.IllegalStateException: Cannot find changelog location: class path resource [db/liquibase-changelog.xml] (please add changelog or check your Liquibase configuration)
-	at org.springframework.util.Assert.state(Assert.java:94) ~[spring-core-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration$LiquibaseConfiguration.checkChangelogExists(LiquibaseAutoConfiguration.java:110) ~[spring-boot-autoconfigure-2.1.1.RELEASE.jar:2.1.1.RELEASE]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:363) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:307) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
-	... 29 common frames omitted
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:276) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:198) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:179) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:353) ~[liquibase-core-3.6.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:305) ~[liquibase-core-3.6.2.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741) ~[spring-beans-5.1.3.RELEASE.jar:5.1.3.RELEASE]
+	... 18 common frames omitted
 
