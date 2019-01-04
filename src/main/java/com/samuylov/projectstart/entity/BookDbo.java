@@ -1,10 +1,12 @@
 package com.samuylov.projectstart.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -20,4 +22,14 @@ public class BookDbo {
 
     @NonNull
     private String description;
+
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER, mappedBy = "book")
+    @JsonIgnore
+    private List<ChapterDbo> chapterList;
+
+    public BookDbo(final Long id, @NonNull final String name, @NonNull final String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
 }
