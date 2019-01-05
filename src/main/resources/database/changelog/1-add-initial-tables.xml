@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create_role_table" author="mary">
+        <createTable tableName="role">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(20)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_user_table" author="mary">
+        <createTable tableName="user">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="patronymic" type="varchar(50)"/>
+            <column name="passport_number" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="login" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="boolean" defaultValueBoolean="true"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_user_info" author="mary">
+        <sql>
+            insert into user(first_name, last_name, patronymic, passport_number, email, login, password) values
+            ("James", "Alan", "Hetfield", "HC1235685", "jamesalan@mail.ru", "james_alan", "jalan"),
+            ("Vladzislav", "Jum", "Egorovich", "HB3567812", "vladislavjum@mail.ru", "vladislav_jum", "vjum")
+        </sql>
+    </changeSet>
+
+    <changeSet id="create_bank_table" author="mary">
+        <createTable tableName="bank">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_bank_info" author="mary">
+        <sql>
+            insert into bank(name, address, phone) values
+            ("M_Bank", "St. Lenina, 23", "(017)6834756")
+        </sql>
+    </changeSet>
+
+    <changeSet id="create_bank_account_table" author="mary">
+        <createTable tableName="bank_account">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="account_number" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="money_amount" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user" type="int">
+                <constraints
+                        referencedTableName="user"
+                        referencedColumnNames="id"
+                        foreignKeyName="user2_fk_user_id"/>
+            </column>
+            <column name="enabled" type="boolean" defaultValueBoolean="true"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_bank_account" author="mary">
+        <sql>
+            insert into bank_account(account_number, money_amount, user) values
+            ("478134978234", 320.14, 1)
+        </sql>
+    </changeSet>
+
+    <changeSet id="create_bank_card_table" author="mary">
+        <createTable tableName="bank_card">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="card_number" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="card_holder_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_date" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cvv" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bank_account" type="int">
+                <constraints
+                        referencedTableName="bank_account"
+                        referencedColumnNames="id"
+                        foreignKeyName="bank_account_fk_bank_account_id"/>
+            </column>
+            <column name="enabled" type="boolean" defaultValueBoolean="true"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add_bank_card" author="mary">
+        <sql>
+            insert into bank_card(card_number, card_holder_name, valid_date, cvv, bank_account) values
+            ("384567123956", "INSTANT CARD", "09/21", "453", 1)
+        </sql>
+    </changeSet>
+
+    <!--<changeSet id="add_initial_role" author="mary">
+        <sql>
+            insert into role(name) values
+            ("admin"),
+            ("user")
+        </sql>
+    </changeSet>-->
+
+</databaseChangeLog>
