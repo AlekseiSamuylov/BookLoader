@@ -3,14 +3,12 @@ package com.samuylov.projectstart.service;
 import com.samuylov.projectstart.MockData;
 import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.dto.BookDto;
-import com.samuylov.projectstart.entity.BookDbo;
+import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.repository.BookRepository;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -35,23 +33,23 @@ public class BookServiceTest {
 
     @Test
     public void createBook() {
-       /*final BookDbo bookDbo = new BookDbo();
+       /*final BookEntity bookDbo = new BookEntity();
         bookDbo.setName("name");
         bookDbo.setDescription("description");
 
-        doReturn(bookDbo).when(bookRepository).save(any(BookDbo.class));
+        doReturn(bookDbo).when(bookRepository).save(any(BookEntity.class));
 
         bookService.createBook(new BookDto());
 
-        verify(bookRepository, times(1)).save(any(BookDbo.class));*/
+        verify(bookRepository, times(1)).save(any(BookEntity.class));*/
     }
 
     @Test
     public void getBooksList() {
-        final List<BookDbo> findAllResult = new ArrayList<>();
-        final BookDbo bookDbo = MockData.bookDbo();
-        findAllResult.add(bookDbo);
-        findAllResult.add(bookDbo);
+        final List<BookEntity> findAllResult = new ArrayList<>();
+        final BookEntity bookEntity = MockData.bookDbo();
+        findAllResult.add(bookEntity);
+        findAllResult.add(bookEntity);
         doReturn(findAllResult).when(bookRepository).findAll();
 
         final List<BookDto> booksList = bookService.getBooksList();
@@ -59,22 +57,22 @@ public class BookServiceTest {
         verify(bookRepository, times(1)).findAll();
         assertEquals(findAllResult.size(), booksList.size());
         for (final BookDto bookDto : booksList) {
-            assertEquals(bookDbo.getName(), bookDto.getName());
-            assertEquals(bookDbo.getDescription(), bookDto.getDescription());
+            assertEquals(bookEntity.getName(), bookDto.getName());
+            assertEquals(bookEntity.getDescription(), bookDto.getDescription());
         }
     }
 
     @Test
     public void updateBook() {
-        final BookDbo bookDbo = MockData.bookDbo();
-        doReturn(Optional.of(bookDbo)).when(bookRepository).findById(1L);
+        final BookEntity bookEntity = MockData.bookDbo();
+        doReturn(Optional.of(bookEntity)).when(bookRepository).findById(1L);
 
         final BookDto bookDto = new BookDto();
         bookDto.setName("book2");
         bookDto.setDescription("hello");
-        doReturn(bookDbo).when(bookRepository).save(any(BookDbo.class));
+        doReturn(bookEntity).when(bookRepository).save(any(BookEntity.class));
 
         bookService.updateBook(1L,  bookDto);
-        verify(bookRepository, times(1)).save(any(BookDbo.class));
+        verify(bookRepository, times(1)).save(any(BookEntity.class));
     }
 }

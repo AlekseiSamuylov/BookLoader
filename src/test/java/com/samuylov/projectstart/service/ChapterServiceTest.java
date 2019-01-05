@@ -3,7 +3,7 @@ package com.samuylov.projectstart.service;
 import com.samuylov.projectstart.MockDataChapter;
 import com.samuylov.projectstart.converter.ChapterConverter;
 import com.samuylov.projectstart.dto.ChapterDto;
-import com.samuylov.projectstart.entity.BookDbo;
+import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.entity.ChapterDbo;
 import com.samuylov.projectstart.repository.ChapterRepository;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class ChapterServiceTest {
         chapterDbo.setNumber(1L);
         chapterDbo.setName("name");
         chapterDbo.setText("text");
-        chapterDbo.setBook(new BookDbo(1L, "book", "desc"));
+        chapterDbo.setBook(new BookEntity(1L, "book", "desc"));
         doReturn(chapterDbo).when(chapterRepository).save(any(ChapterDbo.class));
 
         chapterService.createChapter(new ChapterDto());
@@ -90,7 +90,7 @@ public class ChapterServiceTest {
         chapterDbo1.setNumber(1L);
         chapterDbo1.setName("booook1");
         chapterDbo1.setText("text");
-        chapterDbo1.setBook(new BookDbo(1L, "book", "desc"));
+        chapterDbo1.setBook(new BookEntity(1L, "book", "desc"));
         doReturn(chapterDbo).when(chapterRepository).save(any(ChapterDbo.class));
 
         chapterService.updateChapter(1L, 2L, chapterDbo1);

@@ -1,6 +1,6 @@
 package com.samuylov.projectstart.dto;
 
-import com.samuylov.projectstart.entity.BookDbo;
+import com.samuylov.projectstart.entity.BookEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +11,7 @@ public class ChapterDto {
     private Long number;
     private String name;
     private String text;
-    private BookDbo book;
+    private BookEntity book;
 
     public ChapterDto(final Long number, final String name, final String text) {
         this.number = number;

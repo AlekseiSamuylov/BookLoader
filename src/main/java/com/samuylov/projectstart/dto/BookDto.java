@@ -8,8 +8,17 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 public class BookDto {
-    private Long id;
+    private long id;
     private String name;
     private String description;
+    private int rating;
+    private List<ReviewDto> reviews;
+    private List<CommentDto> comments;
+    public void incrementRating() {
+        rating++;
+    }
+    public void decrementRating() {
+        rating--;
+    }
     private List<ChapterDto> chapterList;
 }

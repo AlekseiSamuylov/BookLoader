@@ -2,7 +2,6 @@ package com.samuylov.projectstart.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -27,7 +26,7 @@ public class ChapterDbo {
 
     @ManyToOne
     @JoinColumn(name = "book")
-    private BookDbo book;
+    private BookEntity book;
 
     public ChapterDbo(@NotNull final Long number, @NotNull final String name, @NotNull final String text) {
         this.number = number;
