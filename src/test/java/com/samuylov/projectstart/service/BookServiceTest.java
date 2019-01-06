@@ -5,12 +5,10 @@ import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.dto.BookDto;
 import com.samuylov.projectstart.entity.BookDbo;
 import com.samuylov.projectstart.repository.BookRepository;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -35,7 +33,7 @@ public class BookServiceTest {
 
     @Test
     public void createBook() {
-       /*final BookDbo bookDbo = new BookDbo();
+       final BookDbo bookDbo = new BookDbo();
         bookDbo.setName("name");
         bookDbo.setDescription("description");
 
@@ -43,7 +41,7 @@ public class BookServiceTest {
 
         bookService.createBook(new BookDto());
 
-        verify(bookRepository, times(1)).save(any(BookDbo.class));*/
+        verify(bookRepository, times(1)).save(any(BookDbo.class));
     }
 
     @Test

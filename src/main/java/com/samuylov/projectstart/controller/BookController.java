@@ -1,7 +1,6 @@
 package com.samuylov.projectstart.controller;
 
 import com.samuylov.projectstart.dto.BookDto;
-import com.samuylov.projectstart.dto.ChapterDto;
 import com.samuylov.projectstart.service.BookService;
 import com.samuylov.projectstart.service.ChapterService;
 import org.springframework.beans.factory.annotation.Autowired;

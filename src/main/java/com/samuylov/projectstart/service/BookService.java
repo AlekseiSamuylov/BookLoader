@@ -2,9 +2,7 @@ package com.samuylov.projectstart.service;
 
 import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.dto.BookDto;
-import com.samuylov.projectstart.dto.ChapterDto;
 import com.samuylov.projectstart.entity.BookDbo;
-import com.samuylov.projectstart.entity.ChapterDbo;
 import com.samuylov.projectstart.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
