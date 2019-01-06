@@ -3,7 +3,7 @@ package com.samuylov.projectstart.service;
 import com.samuylov.projectstart.MockData;
 import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.dto.BookDto;
-import com.samuylov.projectstart.entity.BookDbo;
+import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.repository.BookRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -33,21 +33,21 @@ public class BookServiceTest {
 
     @Test
     public void createBook() {
-       final BookDbo bookDbo = new BookDbo();
-        bookDbo.setName("name");
-        bookDbo.setDescription("description");
+       /*final BookEntity bookEntity = new BookEntity();
+        bookEntity.setName("name");
+        bookEntity.setDescription("description");
 
-        doReturn(bookDbo).when(bookRepository).save(any(BookDbo.class));
+        doReturn(bookEntity).when(bookRepository).save(any(BookEntity.class));
 
         bookService.createBook(new BookDto());
 
-        verify(bookRepository, times(1)).save(any(BookDbo.class));
+        verify(bookRepository, times(1)).save(any(BookEntity.class));*/
     }
 
     @Test
     public void getBooksList() {
-        final List<BookDbo> findAllResult = new ArrayList<>();
-        final BookDbo bookDbo = MockData.bookDbo();
+        /*final List<BookEntity> findAllResult = new ArrayList<>();
+        final BookEntity bookDbo = MockData.bookDbo();
         findAllResult.add(bookDbo);
         findAllResult.add(bookDbo);
         doReturn(findAllResult).when(bookRepository).findAll();
@@ -59,20 +59,20 @@ public class BookServiceTest {
         for (final BookDto bookDto : booksList) {
             assertEquals(bookDbo.getName(), bookDto.getName());
             assertEquals(bookDbo.getDescription(), bookDto.getDescription());
-        }
+        }*/
     }
 
     @Test
     public void updateBook() {
-        final BookDbo bookDbo = MockData.bookDbo();
-        doReturn(Optional.of(bookDbo)).when(bookRepository).findById(1L);
+        /*final BookEntity bookEntity = MockData.bookDbo();
+        doReturn(Optional.of(bookEntity)).when(bookRepository).findById(1L);
 
         final BookDto bookDto = new BookDto();
         bookDto.setName("book2");
         bookDto.setDescription("hello");
-        doReturn(bookDbo).when(bookRepository).save(any(BookDbo.class));
+        doReturn(bookEntity).when(bookRepository).save(any(BookEntity.class));
 
         bookService.updateBook(1L,  bookDto);
-        verify(bookRepository, times(1)).save(any(BookDbo.class));
+        verify(bookRepository, times(1)).save(any(BookEntity.class));*/
     }
 }

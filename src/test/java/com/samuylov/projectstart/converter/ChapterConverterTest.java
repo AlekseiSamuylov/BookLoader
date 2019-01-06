@@ -1,33 +1,46 @@
 package com.samuylov.projectstart.converter;
 
 import com.samuylov.projectstart.MockDataChapter;
+import com.samuylov.projectstart.dto.BookDto;
 import com.samuylov.projectstart.dto.ChapterDto;
-import com.samuylov.projectstart.entity.ChapterDbo;
+import com.samuylov.projectstart.entity.BookEntity;
+import com.samuylov.projectstart.entity.ChapterEntity;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ChapterConverterTest {
 
-    private final ChapterConverter chapterConverter = new ChapterConverter();
+    @InjectMocks
+    private ChapterConverter chapterConverter;
+
+    @Mock
+    private BookConverter bookConverter;
 
     @Test
     public void convertToDto() {
-        final ChapterDbo chapterDbo = MockDataChapter.chapterDbo();
-        final ChapterDto chapterDto = chapterConverter.convertToDto(chapterDbo);
-        assertEquals(chapterDbo.getName(), chapterDto.getName());
-        assertEquals(chapterDbo.getText(), chapterDto.getText());
-        assertEquals(chapterDbo.getNumber(), chapterDto.getNumber());
-        assertEquals(chapterDbo.getBook(), chapterDto.getBook());
+        final ChapterEntity chapterEntity = MockDataChapter.chapterDbo();
+        final ChapterDto chapterDto = chapterConverter.convertToDto(chapterEntity);
+        assertEquals(chapterEntity.getName(), chapterDto.getName());
+        assertEquals(chapterEntity.getText(), chapterDto.getText());
+        assertEquals(chapterEntity.getNumber(), chapterDto.getNumber());
+        BookDto bookDto = bookConverter.convertToDto(chapterEntity.getBook());
+        assertEquals(bookDto, chapterDto.getBook());
     }
 
     @Test
     public void convertToDbo() {
         final ChapterDto chapterDto = MockDataChapter.chapterDto();
-        final ChapterDbo chapterDbo = chapterConverter.convertToDbo(chapterDto);
-        assertEquals(chapterDto.getName(), chapterDbo.getName());
-        assertEquals(chapterDto.getText(), chapterDbo.getText());
-        assertEquals(chapterDto.getNumber(), chapterDbo.getNumber());
-        assertEquals(chapterDto.getBook(), chapterDbo.getBook());
+        final ChapterEntity chapterEntity = chapterConverter.convertToEntity(chapterDto);
+        assertEquals(chapterDto.getName(), chapterEntity.getName());
+        assertEquals(chapterDto.getText(), chapterEntity.getText());
+        assertEquals(chapterDto.getNumber(), chapterEntity.getNumber());
+        BookEntity bookEntity = bookConverter.convertToEntity(chapterDto.getBook());
+        assertEquals(bookEntity, chapterEntity.getBook());
     }
 }

@@ -1,6 +1,7 @@
 package com.samuylov.projectstart.controller;
 
 import com.samuylov.projectstart.dto.BookDto;
+import com.samuylov.projectstart.enumeration.SortType;
 import com.samuylov.projectstart.service.BookService;
 import com.samuylov.projectstart.service.ChapterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,18 @@ public class BookController {
     }
 
     @GetMapping("/list")
-    public List<BookDto> getAllBooks() {
-        return bookService.getBooksList();
+    public List<BookDto> getAllBooks(final @RequestParam(name = "sort", required = false) String sortTypeParam) {
+        if (sortTypeParam == null) {
+            return bookService.getBooksList();
+        } else {
+            SortType sortType = SortType.valueOf(sortTypeParam.toUpperCase());
+            return bookService.getBooksList(sortType);
+        }
     }
 
-    @GetMapping("/list/{id}")
-    public BookDto getBook(@PathVariable Long id) {
-        return bookService.getBook(id);
+    @GetMapping("/byId")
+    public BookDto getBokById(final @RequestParam long id) {
+        return bookService.getBookById(id);
     }
 
     @PutMapping("/list/{bookId}/update")
@@ -42,4 +48,15 @@ public class BookController {
         bookService.updateBook(bookId, bookDto);
         return "Book updated";
     }
+
+    @PutMapping("/incrRating")
+    public void incrementRating(final @RequestParam long bookId) {
+        bookService.incrementRating(bookId);
+    }
+
+    @PutMapping("/decrRating")
+    public void decrementRating(final @RequestParam long bookId) {
+        bookService.decrementRating(bookId);
+    }
 }
+

@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "BOOK")
-public class BookDbo {
+public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,11 +26,15 @@ public class BookDbo {
 
     @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER, mappedBy = "book")
     @JsonIgnore
-    private List<ChapterDbo> chapterList;
+    private List<ChapterEntity> chapterList;
 
-    public BookDbo(final Long id, @NonNull final String name, @NonNull final String description) {
+    @NotNull
+    private int rating;
+
+    public BookEntity(final Long id, @NonNull final String name, @NonNull final String description, @NotNull final int rating) {
         this.id = id;
         this.name = name;
         this.description = description;
+        this.rating = rating;
     }
 }
