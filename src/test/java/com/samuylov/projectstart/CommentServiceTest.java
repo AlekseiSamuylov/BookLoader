@@ -11,6 +11,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.time.LocalDate;
 import java.util.Collections;
+import java.util.Date;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
@@ -30,7 +31,7 @@ public class CommentServiceTest {
         commentEntity.setId(1);
         commentEntity.setText("text");
         commentEntity.setNickName("artur");
-        commentEntity.setDate(LocalDate.now());
+        commentEntity.setDate(new Date());
         commentEntity.setBookId(1);
         when(commentRepository.findAllByBookIdOrderByDateDesc(anyLong())).
                 thenReturn(Collections.singletonList(commentEntity));

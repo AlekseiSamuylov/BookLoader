@@ -1,12 +1,12 @@
 package com.samuylov.projectstart;
 
 import com.samuylov.projectstart.dto.BookDto;
-import com.samuylov.projectstart.entity.BookDbo;
+import com.samuylov.projectstart.entity.BookEntity;
 
 public class MockData {
 
-    public static BookDbo bookDbo() {
-        final BookDbo personDbo = new BookDbo();
+    public static BookEntity bookDbo() {
+        final BookEntity personDbo = new BookEntity();
         personDbo.setName("bookDbo name");
         personDbo.setDescription("bookDbo description");
         return personDbo;

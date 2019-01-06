@@ -6,28 +6,22 @@ import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "COMMENTS")
-public class CommentEntity {
+@Table(name = "BOOK")
+public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NonNull
-    private String text;
+    private String name;
 
     @NonNull
-    @Temporal(TemporalType.DATE)
-    private Date date;
+    private String description;
 
     @NotNull
-    private String nickName;
-
-    @NotNull
-    private long bookId;
+    private int rating;
 }

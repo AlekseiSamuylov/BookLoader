@@ -3,7 +3,7 @@ package com.samuylov.projectstart.service;
 import com.samuylov.projectstart.MockData;
 import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.dto.BookDto;
-import com.samuylov.projectstart.entity.BookDbo;
+import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.repository.BookRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,21 +31,21 @@ public class BookServiceTest {
 
     @Test
     public void createBook() {
-        final BookDbo bookDbo = new BookDbo();
+        final BookEntity bookDbo = new BookEntity();
         bookDbo.setName("name");
         bookDbo.setDescription("description");
 
-        doReturn(bookDbo).when(bookRepository).save(any(BookDbo.class));
+        doReturn(bookDbo).when(bookRepository).save(any(BookEntity.class));
 
         bookService.createBook(new BookDto());
 
-        verify(bookRepository, times(1)).save(any(BookDbo.class));
+        verify(bookRepository, times(1)).save(any(BookEntity.class));
     }
 
     @Test
     public void getBooksList() {
-        final List<BookDbo> findAllResult = new ArrayList<>();
-        final BookDbo bookDbo = MockData.bookDbo();
+        final List<BookEntity> findAllResult = new ArrayList<>();
+        final BookEntity bookDbo = MockData.bookDbo();
         findAllResult.add(bookDbo);
         findAllResult.add(bookDbo);
         doReturn(findAllResult).when(bookRepository).findAll();
