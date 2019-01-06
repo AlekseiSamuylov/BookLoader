@@ -23,7 +23,7 @@ public class BookDbo {
     @NonNull
     private String description;
 
-    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, fetch = FetchType.EAGER, mappedBy = "book")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY, mappedBy = "book")
     @JsonIgnore
     private List<ChapterDbo> chapterList;
 
