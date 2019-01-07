@@ -28,7 +28,7 @@ public class ChapterController {
     @DeleteMapping("/delete/{bookId}/{chapterId}")
     public ResponseEntity deleteChapter(@PathVariable final Long bookId, @PathVariable final Long chapterId) {
         chapterService.deleteChapter(bookId, chapterId);
-        return new ResponseEntity<>("Chapter deleted.", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Chapter deleted.", HttpStatus.OK);
     }
 
     @GetMapping("/chapter/{bookId}/{chapterId}")

@@ -26,4 +26,8 @@ public class ReviewService {
         return reviewRepository.findAllByBookIdOrderByDateDesc(bookId).
                 stream().map(reviewConverter::convertToDto).collect(Collectors.toList());
     }
+
+    public void deleteAllReviewsByBookId(final Long bookId) {
+        reviewRepository.deleteAllByBookId(bookId);
+    }
 }

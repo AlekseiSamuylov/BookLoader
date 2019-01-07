@@ -41,6 +41,10 @@ public class ChapterService {
         chapterRepository.deleteById(chapterEntity.getId());
     }
 
+    public void deleteAllChaptersByBookId(final Long bookId) {
+        chapterRepository.deleteAllByBookId(bookId);
+    }
+
     public ChapterDto getChapterByBookIdAndNumber(final Long bookId, final Long chapterNumber) {
         return chapterConverter.convertToDto(chapterRepository.findByBookIdAndId(bookId, chapterNumber));
     }

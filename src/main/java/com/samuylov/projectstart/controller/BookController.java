@@ -63,5 +63,14 @@ public class BookController {
         }
         return new ResponseEntity<>("Book not found.", HttpStatus.NOT_MODIFIED);
     }
+
+    @DeleteMapping("/delete/{bookId}")
+    public ResponseEntity deleteBook(@PathVariable final Long bookId) {
+        if (bookService.deleteBook(bookId)) {
+            return new ResponseEntity<>("Book deleted.", HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>("Book not found.", HttpStatus.NOT_FOUND);
+    }
 }
 

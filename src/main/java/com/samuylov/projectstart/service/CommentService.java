@@ -26,4 +26,8 @@ public class CommentService {
         return commentRepository.findAllByBookIdOrderByDateDesc(bookId).
                 stream().map(commentConverter::convertToDto).collect(Collectors.toList());
     }
+
+    public void deleteAllCommentsByBookId(final Long bookId) {
+        commentRepository.deleteAllByBookId(bookId);
+    }
 }

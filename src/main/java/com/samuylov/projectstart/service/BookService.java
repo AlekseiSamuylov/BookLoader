@@ -110,4 +110,18 @@ public class BookService {
         final BookEntity bookEntity = bookRepository.getOne(bookId);
         return bookEntity != null;
     }
+
+    public boolean deleteBook(final Long bookId) {
+        final BookEntity bookEntity = bookRepository.getOne(bookId);
+        if (bookEntity == null) {
+            return false;
+        }
+
+        chapterService.deleteAllChaptersByBookId(bookId);
+        commentService.deleteAllCommentsByBookId(bookId);
+        reviewService.deleteAllReviewsByBookId(bookId);
+        bookRepository.delete(bookEntity);
+
+        return true;
+    }
 }
