@@ -22,7 +22,7 @@ public class BookController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity getAllBooks(final @RequestParam(name = "sort", required = false) String sortTypeParam) {
+    public ResponseEntity getAllBooks(@RequestParam(name = "sort", required = false) final String sortTypeParam) {
         if (sortTypeParam == null) {
             return new ResponseEntity<>(bookService.getBooksList(), HttpStatus.FOUND);
         } else {
@@ -32,7 +32,7 @@ public class BookController {
     }
 
     @GetMapping("/byId")
-    public ResponseEntity getBookById(final @RequestParam long id) {
+    public ResponseEntity getBookById(@RequestParam final Long id) {
         BookDto bookDto = bookService.getBookById(id);
         if (bookDto != null) {
             return new ResponseEntity<>(bookDto, HttpStatus.FOUND);
@@ -41,7 +41,7 @@ public class BookController {
     }
 
     @PutMapping("/list/{bookId}/update")
-    public ResponseEntity updateBook(@PathVariable Long bookId, @RequestBody final BookDto bookDto) {
+    public ResponseEntity updateBook(@PathVariable final Long bookId, @RequestBody final BookDto bookDto) {
         if (bookService.updateBook(bookId, bookDto)) {
             return new ResponseEntity<>("Book updated", HttpStatus.ACCEPTED);
         }
@@ -49,7 +49,7 @@ public class BookController {
     }
 
     @PutMapping("/{bookId}/incrRating")
-    public ResponseEntity incrementRating(@PathVariable final long bookId) {
+    public ResponseEntity incrementRating(@PathVariable final Long bookId) {
         if (bookService.incrementRating(bookId)) {
             new ResponseEntity<>("Book rating up", HttpStatus.ACCEPTED);
         }
@@ -57,7 +57,7 @@ public class BookController {
     }
 
     @PutMapping("/{bookId}/decrRating")
-    public ResponseEntity decrementRating(@PathVariable final long bookId) {
+    public ResponseEntity decrementRating(@PathVariable final Long bookId) {
         if (bookService.decrementRating(bookId)) {
             new ResponseEntity<>("Book rating down.", HttpStatus.ACCEPTED);
         }

@@ -22,7 +22,7 @@ public class CommentService {
         commentRepository.save(commentConverter.convertToEntity(commentDto));
     }
 
-    public List<CommentDto> getAllByBookId(final long bookId) {
+    public List<CommentDto> getAllByBookId(final Long bookId) {
         return commentRepository.findAllByBookIdOrderByDateDesc(bookId).
                 stream().map(commentConverter::convertToDto).collect(Collectors.toList());
     }

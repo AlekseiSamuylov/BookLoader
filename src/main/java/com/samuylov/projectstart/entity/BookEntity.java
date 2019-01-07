@@ -22,5 +22,5 @@ public class BookEntity {
     private String description;
 
     @NotNull
-    private int rating;
+    private Integer rating;
 }

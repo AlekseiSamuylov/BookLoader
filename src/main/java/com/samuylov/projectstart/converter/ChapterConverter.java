@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 public class ChapterConverter implements DtoEntityConverter<ChapterDto, ChapterEntity> {
 
     @Override
-    public ChapterDto convertToDto(final ChapterEntity dbo) {
+    public ChapterDto convertToDto(final ChapterEntity entity) {
         final ChapterDto chapterDto = new ChapterDto();
-        BeanUtils.copyProperties(dbo, chapterDto);
+        BeanUtils.copyProperties(entity, chapterDto);
         return chapterDto;
     }
 

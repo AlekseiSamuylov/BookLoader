@@ -14,7 +14,7 @@ import java.util.Date;
 public class ReviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotNull
     private String text;
@@ -27,5 +27,5 @@ public class ReviewEntity {
     private String nickName;
 
     @NotNull
-    private long bookId;
+    private Long bookId;
 }

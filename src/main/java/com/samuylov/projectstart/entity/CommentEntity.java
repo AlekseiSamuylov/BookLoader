@@ -14,7 +14,7 @@ import java.util.Date;
 public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotNull
     private String text;
@@ -27,5 +27,5 @@ public class CommentEntity {
     private String nickName;
 
     @NotNull
-    private long bookId;
+    private Long bookId;
 }

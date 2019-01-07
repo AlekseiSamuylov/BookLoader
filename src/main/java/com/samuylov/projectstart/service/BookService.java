@@ -47,7 +47,7 @@ public class BookService {
         return bookRepository.findAll().stream().map(bookConverter::convertToDto).collect(Collectors.toList());
     }
 
-    public BookDto getBookById(final long bookId) {
+    public BookDto getBookById(final Long bookId) {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
 
         if (bookDto == null) {
@@ -64,9 +64,9 @@ public class BookService {
         return bookDto;
     }
 
-    public boolean updateBook(Long bookId, BookDto bookDto) {
-        BookEntity oldBook = bookRepository.getOne(bookId);
-        BookEntity bookDbo = bookConverter.convertToEntity(bookDto);
+    public boolean updateBook(final Long bookId, final BookDto bookDto) {
+        final BookEntity oldBook = bookRepository.getOne(bookId);
+        final BookEntity bookDbo = bookConverter.convertToEntity(bookDto);
 
         if (oldBook == null) {
             return false;
@@ -79,12 +79,12 @@ public class BookService {
         return true;
     }
 
-    public List<BookDto> getBooksList(SortType sortType) {
+    public List<BookDto> getBooksList(final SortType sortType) {
         final Sort sort = sortMap.get(sortType);
         return bookRepository.findAll(sort).stream().map(bookConverter::convertToDto).collect(Collectors.toList());
     }
 
-    public boolean incrementRating(long bookId) {
+    public boolean incrementRating(final Long bookId) {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
 
         if (bookDto != null) {
@@ -95,7 +95,7 @@ public class BookService {
         return false;
     }
 
-    public boolean decrementRating(long bookId) {
+    public boolean decrementRating(final Long bookId) {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
 
         if (bookDto != null) {
@@ -107,7 +107,7 @@ public class BookService {
     }
 
     public boolean isBookContains(final Long bookId) {
-        BookEntity bookEntity = bookRepository.getOne(bookId);
+        final BookEntity bookEntity = bookRepository.getOne(bookId);
         return bookEntity != null;
     }
 }

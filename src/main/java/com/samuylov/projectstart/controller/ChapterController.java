@@ -26,13 +26,13 @@ public class ChapterController {
     }
 
     @DeleteMapping("/delete/{bookId}/{chapterId}")
-    public ResponseEntity deleteChapter(@PathVariable Long bookId, @PathVariable Long chapterId) {
+    public ResponseEntity deleteChapter(@PathVariable final Long bookId, @PathVariable final Long chapterId) {
         chapterService.deleteChapter(bookId, chapterId);
         return new ResponseEntity<>("Chapter deleted.", HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/chapter/{bookId}/{chapterId}")
-    public ResponseEntity getChapterByBookIdAndChapterId(@PathVariable Long bookId, @PathVariable Long chapterId) {
+    public ResponseEntity getChapterByBookIdAndChapterId(@PathVariable final Long bookId, @PathVariable final Long chapterId) {
         ChapterDto chapterDto = chapterService.getChapterByBookIdAndNumber(bookId, chapterId);
         if (chapterDto != null) {
             return new ResponseEntity<>(chapterDto, HttpStatus.FOUND);
@@ -41,7 +41,7 @@ public class ChapterController {
     }
 
     @PutMapping("/update/{chapterId}")
-    public ResponseEntity updateChapter(@PathVariable Long chapterId, @RequestBody final ChapterDto chapterDto) {
+    public ResponseEntity updateChapter(@PathVariable final Long chapterId, @RequestBody final ChapterDto chapterDto) {
         if (chapterService.updateChapter(chapterId, chapterDto)) {
             return new ResponseEntity<>("Chapter updated.", HttpStatus.ACCEPTED);
         }

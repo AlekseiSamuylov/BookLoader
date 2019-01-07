@@ -36,23 +36,23 @@ public class ChapterService {
         return chapterRepository.findAllByBookId(bookId).stream().map(chapterConverter::convertToDto).collect(Collectors.toList());
     }
 
-    public void deleteChapter(Long bookId, Long chapterId) {
-        ChapterEntity chapterEntity = chapterRepository.findByBookIdAndId(bookId, chapterId);
+    public void deleteChapter(final Long bookId, final Long chapterId) {
+        final ChapterEntity chapterEntity = chapterRepository.findByBookIdAndId(bookId, chapterId);
         chapterRepository.deleteById(chapterEntity.getId());
     }
 
-    public ChapterDto getChapterByBookIdAndNumber(Long bookId, Long chapterNumber) {
+    public ChapterDto getChapterByBookIdAndNumber(final Long bookId, final Long chapterNumber) {
         return chapterConverter.convertToDto(chapterRepository.findByBookIdAndId(bookId, chapterNumber));
     }
 
-    public boolean updateChapter(Long chapterId, ChapterDto chapterDto) {
-        ChapterEntity oldChapter = chapterRepository.findByBookIdAndId(chapterDto.getBookId(), chapterId);
+    public boolean updateChapter(final Long chapterId, final ChapterDto chapterDto) {
+        final ChapterEntity oldChapter = chapterRepository.findByBookIdAndId(chapterDto.getBookId(), chapterId);
 
         if (oldChapter == null) {
             return false;
         }
 
-        ChapterEntity chapterEntity = chapterConverter.convertToEntity(chapterDto);
+        final ChapterEntity chapterEntity = chapterConverter.convertToEntity(chapterDto);
         oldChapter.setName(chapterEntity.getName());
         oldChapter.setText(chapterEntity.getText());
         oldChapter.setNumber(chapterEntity.getNumber());

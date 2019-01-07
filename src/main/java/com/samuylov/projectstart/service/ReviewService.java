@@ -22,7 +22,7 @@ public class ReviewService {
         reviewRepository.save(reviewConverter.convertToEntity(reviewDto));
     }
 
-    public List<ReviewDto> getAllByBookId(final long bookId) {
+    public List<ReviewDto> getAllByBookId(final Long bookId) {
         return reviewRepository.findAllByBookIdOrderByDateDesc(bookId).
                 stream().map(reviewConverter::convertToDto).collect(Collectors.toList());
     }
