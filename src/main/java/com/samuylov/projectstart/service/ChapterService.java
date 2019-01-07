@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-@Transactional
 public class ChapterService {
     private final ChapterRepository chapterRepository;
     private final ChapterConverter chapterConverter;
@@ -49,10 +48,10 @@ public class ChapterService {
     public void updateChapter(Long bookId, Long chapterNumber, ChapterDto chapterDto) {
         ChapterEntity oldChapter = chapterRepository.findByBookIdAndNumber(bookId, chapterNumber);
         ChapterEntity chapterEntity = chapterConverter.convertToEntity(chapterDto);
-        if (chapterEntity.getName() != oldChapter.getName()) {
+        if (!chapterEntity.getName().equals(oldChapter.getName())) {
             oldChapter.setName(chapterEntity.getName());
         }
-        if (chapterEntity.getText() != oldChapter.getText()) {
+        if (!chapterEntity.getText().equals(oldChapter.getText())) {
             oldChapter.setText(chapterEntity.getText());
         }
         chapterRepository.save(oldChapter);

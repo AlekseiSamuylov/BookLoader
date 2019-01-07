@@ -52,15 +52,14 @@ public class BookService {
     public void updateBook(Long bookId, BookDto bookDto) {
         BookEntity oldBook  = bookRepository.findById(bookId).orElse(null);
         BookEntity bookDbo = bookConverter.convertToEntity(bookDto);
-        if (bookDbo.getName() != oldBook.getName()) {
+        if (!bookDbo.getName().equals(oldBook.getName())) {
             oldBook.setName(bookDbo.getName());
         }
-        if (bookDbo.getDescription() != oldBook.getDescription()) {
+        if (!bookDbo.getDescription().equals(oldBook.getDescription())) {
             oldBook.setDescription(bookDbo.getDescription());
         }
         bookRepository.save(oldBook);
     }
-
 
     public List<BookDto> getBooksList(SortType sortType) {
         final Sort sort = sortMap.get(sortType);

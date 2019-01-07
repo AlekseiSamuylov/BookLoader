@@ -49,13 +49,13 @@ public class BookController {
         return "Book updated";
     }
 
-    @PutMapping("/incrRating")
-    public void incrementRating(final @RequestParam long bookId) {
+    @PutMapping("/{bookId}/incrRating")
+    public void incrementRating(@PathVariable final long bookId) {
         bookService.incrementRating(bookId);
     }
 
-    @PutMapping("/decrRating")
-    public void decrementRating(final @RequestParam long bookId) {
+    @PutMapping("/{bookId}/decrRating")
+    public void decrementRating(@PathVariable final long bookId) {
         bookService.decrementRating(bookId);
     }
 }
