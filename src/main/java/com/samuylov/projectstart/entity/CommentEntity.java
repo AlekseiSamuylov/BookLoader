@@ -2,26 +2,24 @@ package com.samuylov.projectstart.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "COMMENTS")
+@Table(name = "COMMENT")
 public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NonNull
+    @NotNull
     private String text;
 
-    @NonNull
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date date;
 

@@ -24,13 +24,6 @@ public class ChapterEntity {
     @NotNull
     private String text;
 
-    @ManyToOne
-    @JoinColumn(name = "book")
-    private BookEntity book;
-
-    public ChapterEntity(@NotNull final Long number, @NotNull final String name, @NotNull final String text) {
-        this.number = number;
-        this.name = name;
-        this.text = text;
-    }
+    @NotNull
+    private Long bookId;
 }

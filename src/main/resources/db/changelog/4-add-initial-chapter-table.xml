@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Mary" id="4.1">
+        <createTable tableName="CHAPTER">
+            <column name="ID" type="INT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NUMBER" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TEXT" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BOOK_ID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Mary" id="4.2" >
+        <addForeignKeyConstraint baseTableName="CHAPTER" baseColumnNames="BOOK_ID" constraintName="CHAPTER_FK_BOOK_ID"
+                                 referencedTableName="BOOK"
+                                 referencedColumnNames="ID"/>
+    </changeSet>
+</databaseChangeLog>

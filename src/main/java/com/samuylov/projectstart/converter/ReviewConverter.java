@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ReviewConverter implements DtoEntityConverter<ReviewDto, ReviewEntity> {
+
     @Override
     public ReviewDto convertToDto(final ReviewEntity entity) {
         final ReviewDto reviewDto = new ReviewDto();

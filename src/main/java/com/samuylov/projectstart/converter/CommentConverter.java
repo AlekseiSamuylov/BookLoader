@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CommentConverter implements DtoEntityConverter<CommentDto, CommentEntity> {
+
     @Override
     public CommentDto convertToDto(final CommentEntity entity) {
         final CommentDto commentDto = new CommentDto();

@@ -3,24 +3,17 @@ package com.samuylov.projectstart.controller;
 import com.samuylov.projectstart.dto.BookDto;
 import com.samuylov.projectstart.enumeration.SortType;
 import com.samuylov.projectstart.service.BookService;
-import com.samuylov.projectstart.service.ChapterService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/book")
 public class BookController {
 
     private final BookService bookService;
-    private final ChapterService chapterService;
-
-    @Autowired
-    public BookController(final BookService bookService, final ChapterService chapterService) {
-        this.bookService = bookService;
-        this.chapterService = chapterService;
-    }
 
     @PostMapping("/create")
     public String createBook(@RequestBody final BookDto bookDto) {
@@ -39,7 +32,7 @@ public class BookController {
     }
 
     @GetMapping("/byId")
-    public BookDto getBokById(final @RequestParam long id) {
+    public BookDto getBookById(final @RequestParam long id) {
         return bookService.getBookById(id);
     }
 

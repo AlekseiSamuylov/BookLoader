@@ -10,14 +10,14 @@ public class BookConverter implements DtoEntityConverter<BookDto, BookEntity> {
     @Override
     public BookDto convertToDto(final BookEntity entity) {
         final BookDto bookDto = new BookDto();
-        BeanUtils.copyProperties(entity, bookDto, "reviews", "comments");
+        BeanUtils.copyProperties(entity, bookDto, "review", "comment", "chapter");
         return bookDto;
     }
 
     @Override
     public BookEntity convertToEntity(final BookDto dto) {
         final BookEntity bookEntity = new BookEntity();
-        BeanUtils.copyProperties(dto, bookEntity, "reviews", "comments");
+        BeanUtils.copyProperties(dto, bookEntity, "review", "comment", "chapter");
         return bookEntity;
     }
 }

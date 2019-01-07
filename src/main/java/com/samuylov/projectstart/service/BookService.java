@@ -2,12 +2,14 @@ package com.samuylov.projectstart.service;
 
 import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.dto.BookDto;
+import com.samuylov.projectstart.dto.ChapterDto;
 import com.samuylov.projectstart.dto.CommentDto;
 import com.samuylov.projectstart.dto.ReviewDto;
 import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.enumeration.SortType;
 import com.samuylov.projectstart.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Sort;
 import java.util.List;
@@ -20,14 +22,18 @@ public class BookService {
     private final BookConverter bookConverter;
     private final CommentService commentService;
     private final ReviewService reviewService;
+    private final ChapterService chapterService;
     private final Map<SortType, Sort> sortMap;
 
     @Autowired
-    public BookService(final BookRepository bookRepository, final BookConverter bookConverter, final CommentService commentService, final ReviewService reviewService, final Map<SortType, Sort> sortMap) {
+    public BookService(final BookRepository bookRepository, final BookConverter bookConverter,
+                       final CommentService commentService, final ReviewService reviewService,
+                       @Lazy final ChapterService chapterService, final Map<SortType, Sort> sortMap) {
         this.bookRepository = bookRepository;
         this.bookConverter = bookConverter;
         this.commentService = commentService;
         this.reviewService = reviewService;
+        this.chapterService = chapterService;
         this.sortMap = sortMap;
     }
 
@@ -44,8 +50,10 @@ public class BookService {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.findById(bookId));
         final List<CommentDto> comments = commentService.getAllByBookId(bookId);
         final List<ReviewDto> reviews = reviewService.getAllByBookId(bookId);
+        final List<ChapterDto> chapters = chapterService.getAllByBookId(bookId);
         bookDto.setComments(comments);
         bookDto.setReviews(reviews);
+        bookDto.setChapters(chapters);
         return bookDto;
     }
 
@@ -76,5 +84,10 @@ public class BookService {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.findById(bookId));
         bookDto.decrementRating();
         bookRepository.save(bookConverter.convertToEntity(bookDto));
+    }
+
+    public boolean isBookContains(final Long bookId) {
+        BookEntity bookEntity = bookRepository.getOne(bookId);
+        return bookEntity != null;
     }
 }

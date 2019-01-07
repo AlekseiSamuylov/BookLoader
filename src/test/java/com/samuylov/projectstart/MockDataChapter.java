@@ -13,7 +13,7 @@ public class MockDataChapter {
         chapterEntity.setName("chapterEntity name");
         chapterEntity.setText("chapterEntity text");
         chapterEntity.setNumber(12L);
-        chapterEntity.setBook(new BookEntity(1L,"book", "desc", 0));
+        chapterEntity.setBookId(10L);
         return chapterEntity;
     }
 
@@ -23,7 +23,7 @@ public class MockDataChapter {
         chapterDto.setName("chapterDto name");
         chapterDto.setText("chapterDto text");
         chapterDto.setNumber(12L);
-        chapterDto.setBook(new BookDto(1L, "book", "desc", 0));
+        chapterDto.setBookId(10L);
         return chapterDto;
     }
 }

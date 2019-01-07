@@ -29,8 +29,7 @@ public class ChapterConverterTest {
         assertEquals(chapterEntity.getName(), chapterDto.getName());
         assertEquals(chapterEntity.getText(), chapterDto.getText());
         assertEquals(chapterEntity.getNumber(), chapterDto.getNumber());
-        BookDto bookDto = bookConverter.convertToDto(chapterEntity.getBook());
-        assertEquals(bookDto, chapterDto.getBook());
+        assertEquals(chapterEntity.getBookId(), chapterDto.getBookId());
     }
 
     @Test
@@ -40,7 +39,6 @@ public class ChapterConverterTest {
         assertEquals(chapterDto.getName(), chapterEntity.getName());
         assertEquals(chapterDto.getText(), chapterEntity.getText());
         assertEquals(chapterDto.getNumber(), chapterEntity.getNumber());
-        BookEntity bookEntity = bookConverter.convertToEntity(chapterDto.getBook());
-        assertEquals(bookEntity, chapterEntity.getBook());
+        assertEquals(chapterDto.getBookId(), chapterEntity.getBookId());
     }
 }

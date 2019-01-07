@@ -7,7 +7,8 @@
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <include file="changelog/1-add-initial-book-table.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/2-add-initial-comments-table.xml" relativeToChangelogFile="true"/>
-    <include file="changelog/3-add-initial-reviews-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/2-add-initial-comment-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/3-add-initial-review-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/4-add-initial-chapter-table.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
