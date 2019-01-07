@@ -1,7 +1,5 @@
 package com.samuylov.projectstart.dto;
 
-import com.samuylov.projectstart.entity.BookEntity;
-import com.samuylov.projectstart.entity.BookEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

@@ -22,13 +22,13 @@ public class ChapterController {
     @PostMapping("/create")
     public ResponseEntity createChapter(@RequestBody final ChapterDto chapterDto) {
         chapterService.createChapter(chapterDto);
-        return new ResponseEntity<>("Chapter created", HttpStatus.CREATED);
+        return new ResponseEntity<>("Chapter created.", HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{bookId}/{chapterId}")
     public ResponseEntity deleteChapter(@PathVariable Long bookId, @PathVariable Long chapterId) {
         chapterService.deleteChapter(bookId, chapterId);
-        return new ResponseEntity<>("Chapter deleted", HttpStatus.ACCEPTED);
+        return new ResponseEntity<>("Chapter deleted.", HttpStatus.ACCEPTED);
     }
 
     @GetMapping("/chapter/{bookId}/{chapterId}")
@@ -37,16 +37,16 @@ public class ChapterController {
         if (chapterDto != null) {
             return new ResponseEntity<>(chapterDto, HttpStatus.FOUND);
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Chapter not found.", HttpStatus.NOT_FOUND);
     }
 
     @PutMapping("/update/{chapterId}")
     public ResponseEntity updateChapter(@PathVariable Long chapterId, @RequestBody final ChapterDto chapterDto) {
         if (chapterService.updateChapter(chapterId, chapterDto)) {
-            return new ResponseEntity(HttpStatus.ACCEPTED);
+            return new ResponseEntity<>("Chapter updated.", HttpStatus.ACCEPTED);
         }
 
-        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        return new ResponseEntity<>("Chapter not found.", HttpStatus.NOT_MODIFIED);
     }
 
 }

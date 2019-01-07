@@ -18,7 +18,7 @@ public class BookController {
     @PostMapping("/create")
     public ResponseEntity createBook(@RequestBody final BookDto bookDto) {
         bookService.createBook(bookDto);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>("Book created.", HttpStatus.CREATED);
     }
 
     @GetMapping("/list")
@@ -37,7 +37,7 @@ public class BookController {
         if (bookDto != null) {
             return new ResponseEntity<>(bookDto, HttpStatus.FOUND);
         }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Book not found.", HttpStatus.NOT_FOUND);
     }
 
     @PutMapping("/list/{bookId}/update")
@@ -45,23 +45,23 @@ public class BookController {
         if (bookService.updateBook(bookId, bookDto)) {
             return new ResponseEntity<>("Book updated", HttpStatus.ACCEPTED);
         }
-        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        return new ResponseEntity<>("Book not updated.", HttpStatus.NOT_MODIFIED);
     }
 
     @PutMapping("/{bookId}/incrRating")
     public ResponseEntity incrementRating(@PathVariable final long bookId) {
         if (bookService.incrementRating(bookId)) {
-            new ResponseEntity<>(HttpStatus.ACCEPTED);
+            new ResponseEntity<>("Book rating up", HttpStatus.ACCEPTED);
         }
-        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        return new ResponseEntity<>("Book not found.", HttpStatus.NOT_MODIFIED);
     }
 
     @PutMapping("/{bookId}/decrRating")
     public ResponseEntity decrementRating(@PathVariable final long bookId) {
         if (bookService.decrementRating(bookId)) {
-            new ResponseEntity<>(HttpStatus.ACCEPTED);
+            new ResponseEntity<>("Book rating down.", HttpStatus.ACCEPTED);
         }
-        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
+        return new ResponseEntity<>("Book not found.", HttpStatus.NOT_MODIFIED);
     }
 }
 

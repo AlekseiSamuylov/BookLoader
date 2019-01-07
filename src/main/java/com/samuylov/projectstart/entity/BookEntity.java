@@ -23,11 +23,4 @@ public class BookEntity {
 
     @NotNull
     private int rating;
-
-    public BookEntity(final Long id, @NotNull final String name, @NotNull final String description, @NotNull final int rating) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.rating = rating;
-    }
 }

@@ -55,6 +55,7 @@ public class ChapterService {
         ChapterEntity chapterEntity = chapterConverter.convertToEntity(chapterDto);
         oldChapter.setName(chapterEntity.getName());
         oldChapter.setText(chapterEntity.getText());
+        oldChapter.setNumber(chapterEntity.getNumber());
 
         chapterRepository.save(oldChapter);
         return true;

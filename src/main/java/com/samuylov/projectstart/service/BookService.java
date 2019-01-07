@@ -88,7 +88,7 @@ public class BookService {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
 
         if (bookDto != null) {
-            bookDto.incrementRating();
+            bookDto.setRating(bookDto.getRating() + 1);
             bookRepository.save(bookConverter.convertToEntity(bookDto));
             return true;
         }
@@ -99,7 +99,7 @@ public class BookService {
         final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
 
         if (bookDto != null) {
-            bookDto.decrementRating();
+            bookDto.setRating(bookDto.getRating() - 1);
             bookRepository.save(bookConverter.convertToEntity(bookDto));
             return true;
         }

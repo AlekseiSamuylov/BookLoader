@@ -7,17 +7,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BookConverter implements DtoEntityConverter<BookDto, BookEntity> {
+
     @Override
     public BookDto convertToDto(final BookEntity entity) {
         final BookDto bookDto = new BookDto();
-        BeanUtils.copyProperties(entity, bookDto, "review", "comment", "chapter");
+        BeanUtils.copyProperties(entity, bookDto);
         return bookDto;
     }
 
     @Override
     public BookEntity convertToEntity(final BookDto dto) {
         final BookEntity bookEntity = new BookEntity();
-        BeanUtils.copyProperties(dto, bookEntity, "review", "comment", "chapter");
+        BeanUtils.copyProperties(dto, bookEntity);
         return bookEntity;
     }
 }

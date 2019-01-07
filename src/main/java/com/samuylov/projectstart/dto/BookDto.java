@@ -15,18 +15,4 @@ public class BookDto {
     private List<ChapterDto> chapters;
     private List<ReviewDto> reviews;
     private List<CommentDto> comments;
-
-    public BookDto(final Long id, final String name, final String description, final int rating) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.rating = rating;
-    }
-
-    public void incrementRating() {
-        rating++;
-    }
-    public void decrementRating() {
-        rating--;
-    }
 }
