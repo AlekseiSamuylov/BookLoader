@@ -2,6 +2,7 @@ package com.samuylov.projectstart.service;
 
 import com.samuylov.projectstart.converter.CommentConverter;
 import com.samuylov.projectstart.dto.CommentDto;
+import com.samuylov.projectstart.entity.CommentEntity;
 import com.samuylov.projectstart.repository.CommentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,17 @@ public class CommentService {
     public void createComment(final CommentDto commentDto) {
         commentDto.setDate(new Date());
         commentRepository.save(commentConverter.convertToEntity(commentDto));
+    }
+
+    public void updateComment(final Long commentId, final CommentDto commentDto) {
+        final CommentEntity oldComment = commentRepository.getOne(commentId);
+
+        oldComment.setText(commentDto.getText());
+        commentRepository.save(oldComment);
+    }
+
+    public void deleteComment(final Long commentId) {
+        commentRepository.deleteById(commentId);
     }
 
     public List<CommentDto> getAllByBookId(final Long bookId) {

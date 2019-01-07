@@ -3,10 +3,7 @@ package com.samuylov.projectstart.service;
 import com.samuylov.projectstart.MockDataChapter;
 import com.samuylov.projectstart.converter.BookConverter;
 import com.samuylov.projectstart.converter.ChapterConverter;
-import com.samuylov.projectstart.dto.BookDto;
 import com.samuylov.projectstart.dto.ChapterDto;
-import com.samuylov.projectstart.entity.BookEntity;
-import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.entity.ChapterEntity;
 import com.samuylov.projectstart.repository.ChapterRepository;
 import org.junit.Test;
@@ -14,10 +11,6 @@ import org.junit.runner.RunWith;
 import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -81,7 +74,7 @@ public class ChapterServiceTest {
     public void getChapterByBookIdAndNumber() {
         final ChapterEntity chapterEntity = MockDataChapter.chapterDbo();
         doReturn(chapterEntity).when(chapterRepository).findByBookIdAndId(1L, 1L);
-        final ChapterDto chapterDto = chapterService.getChapterByBookIdAndNumber(1L, 1L);
+        final ChapterDto chapterDto = chapterService.getChapterByBookIdAndChapterId(1L, 1L);
         verify(chapterRepository, times(1)).findByBookIdAndId(1L, 1L);
     }
 

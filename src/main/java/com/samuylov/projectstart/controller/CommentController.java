@@ -5,10 +5,7 @@ import com.samuylov.projectstart.service.CommentService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -21,5 +18,22 @@ public class CommentController {
     public ResponseEntity createComment(@RequestBody final CommentDto commentDto) {
         commentService.createComment(commentDto);
         return new ResponseEntity<>("Comment added.", HttpStatus.CREATED);
+    }
+
+    @PutMapping("/update/{commentId}")
+    public ResponseEntity updateComment(@PathVariable final Long commentId, @RequestBody final CommentDto commentDto) {
+        commentService.updateComment(commentId, commentDto);
+        return new ResponseEntity<>("Comment updated.", HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{commentId}")
+    public ResponseEntity deleteComment(@PathVariable final Long commentId) {
+        commentService.deleteComment(commentId);
+        return new ResponseEntity<>("Comment deleted.", HttpStatus.OK);
+    }
+
+    @GetMapping("/list/{commentId}")
+    public ResponseEntity getAllCommentsByBookId(@PathVariable final Long commentId) {
+        return new ResponseEntity<>(commentService.getAllByBookId(commentId), HttpStatus.FOUND);
     }
 }

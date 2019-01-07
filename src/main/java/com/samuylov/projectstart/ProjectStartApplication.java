@@ -11,6 +11,7 @@ import java.util.Map;
 
 @SpringBootApplication
 public class ProjectStartApplication {
+
 	@Bean
 	public Map<SortType, Sort> getSortMap() {
 		Map<SortType, Sort> sortMap = new HashMap<>();
@@ -22,6 +23,5 @@ public class ProjectStartApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectStartApplication.class, args);
 	}
-
 }
 
