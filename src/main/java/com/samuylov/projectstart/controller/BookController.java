@@ -4,9 +4,9 @@ import com.samuylov.projectstart.dto.BookDto;
 import com.samuylov.projectstart.enumeration.SortType;
 import com.samuylov.projectstart.service.BookService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -16,40 +16,52 @@ public class BookController {
     private final BookService bookService;
 
     @PostMapping("/create")
-    public String createBook(@RequestBody final BookDto bookDto) {
+    public ResponseEntity createBook(@RequestBody final BookDto bookDto) {
         bookService.createBook(bookDto);
-        return "Book created";
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/list")
-    public List<BookDto> getAllBooks(final @RequestParam(name = "sort", required = false) String sortTypeParam) {
+    public ResponseEntity getAllBooks(final @RequestParam(name = "sort", required = false) String sortTypeParam) {
         if (sortTypeParam == null) {
-            return bookService.getBooksList();
+            return new ResponseEntity<>(bookService.getBooksList(), HttpStatus.FOUND);
         } else {
             SortType sortType = SortType.valueOf(sortTypeParam.toUpperCase());
-            return bookService.getBooksList(sortType);
+            return new ResponseEntity<>(bookService.getBooksList(sortType), HttpStatus.FOUND);
         }
     }
 
     @GetMapping("/byId")
-    public BookDto getBookById(final @RequestParam long id) {
-        return bookService.getBookById(id);
+    public ResponseEntity getBookById(final @RequestParam long id) {
+        BookDto bookDto = bookService.getBookById(id);
+        if (bookDto != null) {
+            return new ResponseEntity<>(bookDto, HttpStatus.FOUND);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @PutMapping("/list/{bookId}/update")
-    public String updateBook(@PathVariable Long bookId, @RequestBody final BookDto bookDto) {
-        bookService.updateBook(bookId, bookDto);
-        return "Book updated";
+    public ResponseEntity updateBook(@PathVariable Long bookId, @RequestBody final BookDto bookDto) {
+        if (bookService.updateBook(bookId, bookDto)) {
+            return new ResponseEntity<>("Book updated", HttpStatus.ACCEPTED);
+        }
+        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
     }
 
     @PutMapping("/{bookId}/incrRating")
-    public void incrementRating(@PathVariable final long bookId) {
-        bookService.incrementRating(bookId);
+    public ResponseEntity incrementRating(@PathVariable final long bookId) {
+        if (bookService.incrementRating(bookId)) {
+            new ResponseEntity<>(HttpStatus.ACCEPTED);
+        }
+        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
     }
 
     @PutMapping("/{bookId}/decrRating")
-    public void decrementRating(@PathVariable final long bookId) {
-        bookService.decrementRating(bookId);
+    public ResponseEntity decrementRating(@PathVariable final long bookId) {
+        if (bookService.decrementRating(bookId)) {
+            new ResponseEntity<>(HttpStatus.ACCEPTED);
+        }
+        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
     }
 }
 

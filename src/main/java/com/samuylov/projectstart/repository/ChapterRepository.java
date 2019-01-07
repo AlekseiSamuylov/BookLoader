@@ -8,9 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ChapterRepository extends JpaRepository<ChapterEntity, Long> {
-    ChapterEntity findByNumber(Long number);
-
-    ChapterEntity findByBookIdAndNumber(Long bookId, Long number);
-
+    ChapterEntity findByBookIdAndId(Long bookId, Long chapterId);
     List<ChapterEntity> findAllByBookId(Long bookId);
 }

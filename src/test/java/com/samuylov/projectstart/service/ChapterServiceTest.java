@@ -80,15 +80,15 @@ public class ChapterServiceTest {
     @Test
     public void getChapterByBookIdAndNumber() {
         final ChapterEntity chapterEntity = MockDataChapter.chapterDbo();
-        doReturn(chapterEntity).when(chapterRepository).findByBookIdAndNumber(1L, 1L);
+        doReturn(chapterEntity).when(chapterRepository).findByBookIdAndId(1L, 1L);
         final ChapterDto chapterDto = chapterService.getChapterByBookIdAndNumber(1L, 1L);
-        verify(chapterRepository, times(1)).findByBookIdAndNumber(1L, 1L);
+        verify(chapterRepository, times(1)).findByBookIdAndId(1L, 1L);
     }
 
     @Test
     public void updateChapter() {
         final ChapterEntity chapterEntity = MockDataChapter.chapterDbo();
-        doReturn(chapterEntity).when(chapterRepository).findByBookIdAndNumber(1L, 2L);
+        doReturn(chapterEntity).when(chapterRepository).findByBookIdAndId(1L, 2L);
 
         final ChapterDto chapterDto = new ChapterDto();
         chapterDto.setNumber(1L);

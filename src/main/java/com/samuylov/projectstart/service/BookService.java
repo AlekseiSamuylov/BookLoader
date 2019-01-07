@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class BookService {
+
     private final BookRepository bookRepository;
     private final BookConverter bookConverter;
     private final CommentService commentService;
@@ -47,26 +48,35 @@ public class BookService {
     }
 
     public BookDto getBookById(final long bookId) {
-        final BookDto bookDto = bookConverter.convertToDto(bookRepository.findById(bookId));
+        final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
+
+        if (bookDto == null) {
+            return null;
+        }
+
         final List<CommentDto> comments = commentService.getAllByBookId(bookId);
         final List<ReviewDto> reviews = reviewService.getAllByBookId(bookId);
         final List<ChapterDto> chapters = chapterService.getAllByBookId(bookId);
         bookDto.setComments(comments);
         bookDto.setReviews(reviews);
         bookDto.setChapters(chapters);
+
         return bookDto;
     }
 
-    public void updateBook(Long bookId, BookDto bookDto) {
-        BookEntity oldBook  = bookRepository.findById(bookId).orElse(null);
+    public boolean updateBook(Long bookId, BookDto bookDto) {
+        BookEntity oldBook = bookRepository.getOne(bookId);
         BookEntity bookDbo = bookConverter.convertToEntity(bookDto);
-        if (!bookDbo.getName().equals(oldBook.getName())) {
-            oldBook.setName(bookDbo.getName());
+
+        if (oldBook == null) {
+            return false;
         }
-        if (!bookDbo.getDescription().equals(oldBook.getDescription())) {
-            oldBook.setDescription(bookDbo.getDescription());
-        }
+
+        oldBook.setName(bookDbo.getName());
+        oldBook.setDescription(bookDbo.getDescription());
         bookRepository.save(oldBook);
+
+        return true;
     }
 
     public List<BookDto> getBooksList(SortType sortType) {
@@ -74,16 +84,26 @@ public class BookService {
         return bookRepository.findAll(sort).stream().map(bookConverter::convertToDto).collect(Collectors.toList());
     }
 
-    public void incrementRating(long bookId) {
-        final BookDto bookDto = bookConverter.convertToDto(bookRepository.findById(bookId));
-        bookDto.incrementRating();
-        bookRepository.save(bookConverter.convertToEntity(bookDto));
+    public boolean incrementRating(long bookId) {
+        final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
+
+        if (bookDto != null) {
+            bookDto.incrementRating();
+            bookRepository.save(bookConverter.convertToEntity(bookDto));
+            return true;
+        }
+        return false;
     }
 
-    public void decrementRating(long bookId) {
-        final BookDto bookDto = bookConverter.convertToDto(bookRepository.findById(bookId));
-        bookDto.decrementRating();
-        bookRepository.save(bookConverter.convertToEntity(bookDto));
+    public boolean decrementRating(long bookId) {
+        final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
+
+        if (bookDto != null) {
+            bookDto.decrementRating();
+            bookRepository.save(bookConverter.convertToEntity(bookDto));
+            return true;
+        }
+        return false;
     }
 
     public boolean isBookContains(final Long bookId) {

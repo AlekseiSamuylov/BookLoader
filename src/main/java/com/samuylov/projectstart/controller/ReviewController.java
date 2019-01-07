@@ -4,6 +4,8 @@ import com.samuylov.projectstart.dto.ReviewDto;
 import com.samuylov.projectstart.service.ReviewService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +19,8 @@ public class ReviewController {
     private final ReviewService reviewService;
 
     @PostMapping("/createReview")
-    public String createReview(final @RequestBody ReviewDto reviewDto) {
+    public ResponseEntity createReview(final @RequestBody ReviewDto reviewDto) {
         reviewService.createReview(reviewDto);
-        return "Review created";
+        return new ResponseEntity(HttpStatus.CREATED);
     }
 }

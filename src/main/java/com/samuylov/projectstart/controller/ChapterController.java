@@ -3,10 +3,9 @@ package com.samuylov.projectstart.controller;
 import com.samuylov.projectstart.dto.ChapterDto;
 import com.samuylov.projectstart.service.ChapterService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -16,31 +15,38 @@ public class ChapterController {
     private final ChapterService chapterService;
 
     @GetMapping("/list/{bookId}")
-    public List<ChapterDto> getAllChaptersByBookId(@PathVariable final Long bookId) {
-        return chapterService.getAllByBookId(bookId);
+    public ResponseEntity getAllChaptersByBookId(@PathVariable final Long bookId) {
+        return new ResponseEntity<>(chapterService.getAllByBookId(bookId), HttpStatus.FOUND);
     }
 
     @PostMapping("/create")
-    public String createChapter(@RequestBody final ChapterDto chapterDto) {
+    public ResponseEntity createChapter(@RequestBody final ChapterDto chapterDto) {
         chapterService.createChapter(chapterDto);
-        return "Chapter created";
+        return new ResponseEntity<>("Chapter created", HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/delete/{bookId}/{chapterNumber}")
-    public String deleteChapter(@PathVariable Long bookId, @PathVariable Long chapterNumber) {
-        chapterService.deleteChapter(bookId, chapterNumber);
-        return "Chapter deleted";
+    @DeleteMapping("/delete/{bookId}/{chapterId}")
+    public ResponseEntity deleteChapter(@PathVariable Long bookId, @PathVariable Long chapterId) {
+        chapterService.deleteChapter(bookId, chapterId);
+        return new ResponseEntity<>("Chapter deleted", HttpStatus.ACCEPTED);
     }
 
-    @GetMapping("/chapter/{bookId}/{chapterNumber}")
-    public ChapterDto getChapterByBookIdAndNumber(@PathVariable Long bookId, @PathVariable Long chapterNumber) {
-        return chapterService.getChapterByBookIdAndNumber(bookId, chapterNumber);
+    @GetMapping("/chapter/{bookId}/{chapterId}")
+    public ResponseEntity getChapterByBookIdAndChapterId(@PathVariable Long bookId, @PathVariable Long chapterId) {
+        ChapterDto chapterDto = chapterService.getChapterByBookIdAndNumber(bookId, chapterId);
+        if (chapterDto != null) {
+            return new ResponseEntity<>(chapterDto, HttpStatus.FOUND);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/update/{chapterNumber}")
-    public String updateChapter(@PathVariable Long chapterNumber, @RequestBody final ChapterDto chapterDto) {
-        chapterService.updateChapter(chapterNumber, chapterDto);
-        return "Chapter updated";
+    @PutMapping("/update/{chapterId}")
+    public ResponseEntity updateChapter(@PathVariable Long chapterId, @RequestBody final ChapterDto chapterDto) {
+        if (chapterService.updateChapter(chapterId, chapterDto)) {
+            return new ResponseEntity(HttpStatus.ACCEPTED);
+        }
+
+        return new ResponseEntity(HttpStatus.NOT_MODIFIED);
     }
 
 }
