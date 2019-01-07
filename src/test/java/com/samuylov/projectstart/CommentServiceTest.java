@@ -28,11 +28,11 @@ public class CommentServiceTest {
     @Test
     public void testGetCommentsByBookId() {
         final CommentEntity commentEntity = new CommentEntity();
-        commentEntity.setId(1);
+        commentEntity.setId(1L);
         commentEntity.setText("text");
         commentEntity.setNickName("artur");
         commentEntity.setDate(new Date());
-        commentEntity.setBookId(1);
+        commentEntity.setBookId(1L);
         when(commentRepository.findAllByBookIdOrderByDateDesc(anyLong())).
                 thenReturn(Collections.singletonList(commentEntity));
     }
@@ -43,7 +43,7 @@ public class CommentServiceTest {
             Object[] args = invocationOnMock.getArguments();
             if (args != null && args.length > 0 && args[0] != null) {
                 CommentEntity reviewEntity = (CommentEntity) args[0];
-                reviewEntity.setId(1);
+                reviewEntity.setId(1L);
                 return reviewEntity;
             }
             return null;

@@ -28,11 +28,11 @@ public class ReviewServiceTest {
     @Test
     public void testGetReviewsByBookId() {
         final ReviewEntity reviewEntity = new ReviewEntity();
-        reviewEntity.setId(1);
+        reviewEntity.setId(1L);
         reviewEntity.setText("text");
         reviewEntity.setNickName("artur");
         reviewEntity.setDate(new Date());
-        reviewEntity.setBookId(1);
+        reviewEntity.setBookId(1L);
         when(reviewRepository.findAllByBookIdOrderByDateDesc(anyLong())).
                 thenReturn(Collections.singletonList(reviewEntity));
     }
@@ -43,7 +43,7 @@ public class ReviewServiceTest {
             Object[] args = invocationOnMock.getArguments();
             if (args != null && args.length > 0 && args[0] != null) {
                 ReviewEntity reviewEntity = (ReviewEntity) args[0];
-                reviewEntity.setId(1);
+                reviewEntity.setId(1L);
                 return reviewEntity;
             }
             return null;
