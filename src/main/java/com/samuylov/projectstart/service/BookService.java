@@ -9,6 +9,8 @@ import com.samuylov.projectstart.entity.BookEntity;
 import com.samuylov.projectstart.enumeration.SortType;
 import com.samuylov.projectstart.repository.BookRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Sort;
 import java.util.List;
@@ -32,7 +34,7 @@ public class BookService {
     }
 
     public void updateBook(final Long bookId, final BookDto bookDto) {
-        final BookEntity oldBook = bookRepository.getOne(bookId);
+        final BookEntity oldBook = bookRepository.findFirstById(bookId);
 
         oldBook.setName(bookDto.getName());
         oldBook.setDescription(bookDto.getDescription());

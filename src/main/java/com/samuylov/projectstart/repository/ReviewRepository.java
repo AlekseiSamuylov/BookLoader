@@ -11,6 +11,8 @@ import java.util.List;
 public interface ReviewRepository extends JpaRepository<ReviewEntity, Long> {
     List<ReviewEntity> findAllByBookIdOrderByDateDesc(Long bookId);
 
+    ReviewEntity findFirstById(Long reviewId);
+
     @Transactional
     void deleteAllByBookId(Long bookId);
 }

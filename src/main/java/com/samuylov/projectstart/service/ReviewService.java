@@ -24,7 +24,7 @@ public class ReviewService {
     }
 
     public void updateReview(final Long reviewId, final ReviewDto reviewDto) {
-        final ReviewEntity oldReview = reviewRepository.getOne(reviewId);
+        final ReviewEntity oldReview = reviewRepository.findFirstById(reviewId);
 
         oldReview.setText(reviewDto.getText());
         reviewRepository.save(oldReview);

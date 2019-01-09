@@ -24,7 +24,7 @@ public class CommentService {
     }
 
     public void updateComment(final Long commentId, final CommentDto commentDto) {
-        final CommentEntity oldComment = commentRepository.getOne(commentId);
+        final CommentEntity oldComment = commentRepository.findFirstById(commentId);
 
         oldComment.setText(commentDto.getText());
         commentRepository.save(oldComment);

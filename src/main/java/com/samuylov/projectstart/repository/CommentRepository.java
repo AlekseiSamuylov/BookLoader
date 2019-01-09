@@ -11,6 +11,8 @@ import java.util.List;
 public interface CommentRepository extends JpaRepository<CommentEntity, Long> {
     List<CommentEntity> findAllByBookIdOrderByDateDesc(Long bookId);
 
+    CommentEntity findFirstById(Long commentId);
+
     @Transactional
     void deleteAllByBookId(Long bookId);
 }
