@@ -49,7 +49,7 @@ public class BookService {
     }
 
     public BookDto getBookById(final Long bookId) {
-        final BookDto bookDto = bookConverter.convertToDto(bookRepository.getOne(bookId));
+        final BookDto bookDto = bookConverter.convertToDto(bookRepository.findFirstById(bookId));
 
         final List<CommentDto> comments = commentService.getAllByBookId(bookId);
         final List<ReviewDto> reviews = reviewService.getAllByBookId(bookId);
@@ -82,5 +82,9 @@ public class BookService {
 
         bookDto.setRating(bookDto.getRating() - 1);
         bookRepository.save(bookConverter.convertToEntity(bookDto));
+    }
+
+    public boolean isContains(final Long bookId) {
+        return getBookById(bookId) != null;
     }
 }

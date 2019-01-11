@@ -39,6 +39,10 @@ public class CommentService {
                 stream().map(commentConverter::convertToDto).collect(Collectors.toList());
     }
 
+    public List<CommentDto> getCommentsList() {
+        return commentRepository.findAll().stream().map(commentConverter::convertToDto).collect(Collectors.toList());
+    }
+
     public void deleteAllCommentsByBookId(final Long bookId) {
         commentRepository.deleteAllByBookId(bookId);
     }
