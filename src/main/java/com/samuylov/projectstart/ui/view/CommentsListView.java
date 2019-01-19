@@ -97,7 +97,7 @@ public class CommentsListView extends VerticalLayout implements View {
                     binder.readBean(new CommentDto());
 
                     if (bookService.isContains(commentDto.getBookId())) {
-                        commentService.createComment(commentDto);
+                        commentService.create(commentDto);
                     } else {
                         Notification.show("Comment could not be saved, " +
                                 "please check book id.");
@@ -179,7 +179,7 @@ public class CommentsListView extends VerticalLayout implements View {
                 try {
                     binder.writeBean(commentDto);
                     binder.readBean(new CommentDto());
-                    commentService.updateComment(commentDto.getId(), commentDto);
+                    commentService.update(commentDto.getId(), commentDto);
                     refreshDataProvider();
                     grid.deselectAll();
                     editCommentWindow.close();
@@ -225,7 +225,7 @@ public class CommentsListView extends VerticalLayout implements View {
         Button deleteCommentButton = new Button("Delete");
         deleteCommentButton.addClickListener(clickEvent -> {
             for (CommentDto commentDtoGrid : grid.getSelectedItems()) {
-                commentService.deleteComment(commentDtoGrid.getId());
+                commentService.delete(commentDtoGrid.getId());
             }
 
             refreshDataProvider();

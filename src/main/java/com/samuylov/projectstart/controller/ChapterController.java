@@ -21,7 +21,7 @@ public class ChapterController {
             notes = "Beautiful create chapter")
     @PostMapping("/create")
     public ResponseEntity createChapter(@RequestBody final ChapterDto chapterDto) {
-        chapterService.createChapter(chapterDto);
+        chapterService.create(chapterDto);
         return new ResponseEntity<>("Chapter created.", HttpStatus.CREATED);
     }
 
@@ -29,7 +29,7 @@ public class ChapterController {
             notes = "Beautiful update chapter")
     @PutMapping("/update/{chapterId}")
     public ResponseEntity updateChapter(@PathVariable final Long chapterId, @RequestBody final ChapterDto chapterDto) {
-        chapterService.updateChapter(chapterId, chapterDto);
+        chapterService.update(chapterId, chapterDto);
         return new ResponseEntity<>("Chapter updated.", HttpStatus.OK);
     }
 
@@ -37,7 +37,7 @@ public class ChapterController {
             notes = "Beautiful delete chapter")
     @DeleteMapping("/delete/{chapterId}")
     public ResponseEntity deleteChapter(@PathVariable final Long chapterId) {
-        chapterService.deleteChapter(chapterId);
+        chapterService.delete(chapterId);
         return new ResponseEntity<>("Chapter deleted.", HttpStatus.OK);
     }
 

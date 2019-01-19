@@ -5,7 +5,6 @@ import com.samuylov.projectstart.enumeration.SortType;
 import com.samuylov.projectstart.service.BookService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +22,7 @@ public class BookController {
             notes = "Beautiful create book")
     @PostMapping("/create")
     public ResponseEntity createBook(@RequestBody final BookDto bookDto) {
-        bookService.createBook(bookDto);
+        bookService.create(bookDto);
         return new ResponseEntity<>("Book created.", HttpStatus.CREATED);
     }
 
@@ -31,7 +30,7 @@ public class BookController {
             notes = "Beautiful update book")
     @PutMapping("/list/{bookId}/update")
     public ResponseEntity updateBook(@PathVariable final Long bookId, @RequestBody final BookDto bookDto) {
-        bookService.updateBook(bookId, bookDto);
+        bookService.update(bookId, bookDto);
         return new ResponseEntity<>("Book updated", HttpStatus.OK);
     }
 
@@ -39,7 +38,7 @@ public class BookController {
             notes = "Beautiful delete book")
     @DeleteMapping("/delete/{bookId}")
     public ResponseEntity deleteBook(@PathVariable final Long bookId) {
-        bookService.deleteBook(bookId);
+        bookService.delete(bookId);
         return new ResponseEntity<>("Book deleted.", HttpStatus.OK);
     }
 
@@ -56,7 +55,7 @@ public class BookController {
     @GetMapping("/list")
     public ResponseEntity getAllBooks(@RequestParam(name = "sort", required = false) final String sortTypeParam) {
         if (sortTypeParam == null) {
-            return new ResponseEntity<>(bookService.getBooksList(), HttpStatus.FOUND);
+            return new ResponseEntity<>(bookService.getList(), HttpStatus.FOUND);
         } else {
             SortType sortType = SortType.valueOf(sortTypeParam.toUpperCase());
             return new ResponseEntity<>(bookService.getBooksList(sortType), HttpStatus.FOUND);

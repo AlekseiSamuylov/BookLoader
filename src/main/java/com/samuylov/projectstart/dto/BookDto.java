@@ -7,8 +7,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class BookDto {
-    private Long id;
+public class BookDto extends AbstractDto{
     private String name;
     private String description;
     private Integer rating;

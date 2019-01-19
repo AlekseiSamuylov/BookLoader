@@ -18,6 +18,7 @@
 		<java.version>1.8</java.version>
 		<mockito.version>2.20.1</mockito.version>
 		<vaadin.version>8.6.3</vaadin.version>
+		<vaadin-spring.version>3.0.0</vaadin-spring.version>
 	</properties>
 
 	<dependencies>
@@ -70,6 +71,26 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+		<!--<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>${vaadin-spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-spring-boot</artifactId>
+			<version>${vaadin-spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-spring</artifactId>
+			<version>${vaadin-spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.vaadin</groupId>
+			<artifactId>vaadin-spring-security</artifactId>
+			<version>${vaadin-spring.version}</version>
+		</dependency>-->
 	</dependencies>
 
 	<dependencyManagement>
@@ -93,6 +114,7 @@
 			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
+				<version>${vaadin.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -106,6 +128,24 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.0.0</version>
+				<!-- Clean up also any pre-compiled themes -->
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>src/main/webapp/VAADIN/themes</directory>
+							<includes>
+								<include>**/styles.css</include>
+								<include>**/styles.scss.cache</include>
+							</includes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>

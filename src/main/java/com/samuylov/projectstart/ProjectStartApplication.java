@@ -24,4 +24,3 @@ public class ProjectStartApplication {
 		SpringApplication.run(ProjectStartApplication.class, args);
 	}
 }
-

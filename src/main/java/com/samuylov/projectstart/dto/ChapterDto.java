@@ -5,8 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class ChapterDto {
-    private Long id;
+public class ChapterDto extends AbstractDto {
     private Long number;
     private String name;
     private String text;

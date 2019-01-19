@@ -39,7 +39,7 @@ public class BookServiceTest {
 
         doReturn(bookEntity).when(bookRepository).save(any(BookEntity.class));
 
-        bookService.createBook(new BookDto());
+        bookService.create(new BookDto());
 
         verify(bookRepository, times(1)).save(any(BookEntity.class));*/
     }
@@ -52,7 +52,7 @@ public class BookServiceTest {
         findAllResult.add(bookDbo);
         doReturn(findAllResult).when(bookRepository).findAll();
 
-        final List<BookDto> booksList = bookService.getBooksList();
+        final List<BookDto> booksList = bookService.getList();
 
         verify(bookRepository, times(1)).findAll();
         assertEquals(findAllResult.size(), booksList.size());
@@ -72,7 +72,7 @@ public class BookServiceTest {
         bookDto.setDescription("hello");
         doReturn(bookEntity).when(bookRepository).save(any(BookEntity.class));
 
-        bookService.updateBook(1L,  bookDto);
+        bookService.update(1L,  bookDto);
         verify(bookRepository, times(1)).save(any(BookEntity.class));*/
     }
 }

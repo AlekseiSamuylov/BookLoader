@@ -38,7 +38,7 @@ public class ChapterServiceTest {
         chapterEntity.setBookId(10L);
         doReturn(chapterEntity).when(chapterRepository).save(any(ChapterEntity.class));
 
-        chapterService.createChapter(new ChapterDto());
+        chapterService.create(new ChapterDto());
 
         verify(chapterRepository, times(1)).save(any(ChapterEntity.class));
     }
@@ -64,9 +64,9 @@ public class ChapterServiceTest {
 //    }
 
 //    @Test
-//    public void deleteChapter() {
+//    public void delete() {
 //        doNothing().when(chapterRepository).deleteById(1L);
-//        chapterService.deleteChapter(1L, 1L);
+//        chapterService.delete(1L, 1L);
 //        verify(chapterRepository, times(1)).deleteByBookIdAndNumber(1L, 1L);
 //    }
 
@@ -90,7 +90,7 @@ public class ChapterServiceTest {
         chapterDto.setBookId(10L);
         doReturn(chapterEntity).when(chapterRepository).save(any(ChapterEntity.class));
 
-        chapterService.updateChapter(1L, chapterDto);
+        chapterService.update(1L, chapterDto);
         verify(chapterRepository, times(1)).save(any(ChapterEntity.class));
     }
 }

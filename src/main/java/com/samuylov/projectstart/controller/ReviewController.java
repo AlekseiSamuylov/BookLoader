@@ -21,7 +21,7 @@ public class ReviewController {
             notes = "Beautiful create review")
     @PostMapping("/createReview")
     public ResponseEntity createReview(@RequestBody final ReviewDto reviewDto) {
-        reviewService.createReview(reviewDto);
+        reviewService.create(reviewDto);
         return new ResponseEntity<>("Review added.", HttpStatus.CREATED);
     }
 
@@ -29,7 +29,7 @@ public class ReviewController {
             notes = "Beautiful update review")
     @PutMapping("/update/{reviewId}")
     public ResponseEntity updateReview(@PathVariable final Long reviewId, @RequestBody final ReviewDto reviewDto) {
-        reviewService.updateReview(reviewId, reviewDto);
+        reviewService.update(reviewId, reviewDto);
         return new ResponseEntity<>("Review updated.", HttpStatus.OK);
     }
 
@@ -37,7 +37,7 @@ public class ReviewController {
             notes = "Beautiful delete review")
     @DeleteMapping("/delete/{reviewId}")
     public ResponseEntity deleteReview(@PathVariable final Long reviewId) {
-        reviewService.deleteReview(reviewId);
+        reviewService.delete(reviewId);
         return new ResponseEntity<>("Review deleted.", HttpStatus.OK);
     }
 

@@ -21,7 +21,7 @@ public class CommentController {
             notes = "Beautiful create comment")
     @PostMapping("/createComment")
     public ResponseEntity createComment(@RequestBody final CommentDto commentDto) {
-        commentService.createComment(commentDto);
+        commentService.create(commentDto);
         return new ResponseEntity<>("Comment added.", HttpStatus.CREATED);
     }
 
@@ -29,7 +29,7 @@ public class CommentController {
             notes = "Beautiful update comment")
     @PutMapping("/update/{commentId}")
     public ResponseEntity updateComment(@PathVariable final Long commentId, @RequestBody final CommentDto commentDto) {
-        commentService.updateComment(commentId, commentDto);
+        commentService.update(commentId, commentDto);
         return new ResponseEntity<>("Comment updated.", HttpStatus.OK);
     }
 
@@ -37,7 +37,7 @@ public class CommentController {
             notes = "Beautiful delete comment")
     @DeleteMapping("/delete/{commentId}")
     public ResponseEntity deleteComment(@PathVariable final Long commentId) {
-        commentService.deleteComment(commentId);
+        commentService.delete(commentId);
         return new ResponseEntity<>("Comment deleted.", HttpStatus.OK);
     }
 
