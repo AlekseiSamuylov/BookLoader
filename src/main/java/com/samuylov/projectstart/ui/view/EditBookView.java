@@ -1,17 +1,28 @@
 package com.samuylov.projectstart.ui.view;
 
 import com.samuylov.projectstart.dto.BookDto;
+import com.samuylov.projectstart.entity.BookEntity;
 import com.vaadin.data.provider.ConfigurableFilterDataProvider;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.spring.annotation.ViewScope;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.TextField;
 
 @SpringView(name = EditBookView.NAME)
 @ViewScope
 //@Secured("ADMIN")
-public class EditBookView extends AbstractAdministrateBookListView<BookDto> {
+public class EditBookView extends AbstractAdministrateBookListView<BookDto, BookEntity> {
 
     public static final String NAME = "booksEditor";
+
+    @Override
+    protected void setAddButton() {
+        addButton = new Button("Add");
+        addButton.addClickListener(clickEvent -> {
+            windowForm.init(new BookDto(), closeFunc);
+            getUI().addWindow(windowForm);
+        });
+    }
 
     @Override
     protected void setFilterTextField() {

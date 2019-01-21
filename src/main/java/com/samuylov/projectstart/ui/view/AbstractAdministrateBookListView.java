@@ -1,42 +1,39 @@
 package com.samuylov.projectstart.ui.view;
 
 import com.samuylov.projectstart.dto.AbstractDto;
+import com.samuylov.projectstart.entity.AbstractEntity;
 import com.samuylov.projectstart.service.AbstractService;
-import com.samuylov.projectstart.ui.annotations.FormType;
 import com.samuylov.projectstart.ui.form.AbstractForm;
+import com.samuylov.projectstart.ui.form.CloseFormFunction;
 import com.vaadin.data.provider.CallbackDataProvider;
 import com.vaadin.navigator.View;
 import com.vaadin.ui.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 
 import javax.annotation.PostConstruct;
 
-public abstract class AbstractAdministrateBookListView<DtoClass extends AbstractDto>
+public abstract class AbstractAdministrateBookListView<DtoClass extends AbstractDto,
+                                                       EntityClass extends AbstractEntity>
         extends VerticalLayout
         implements View {
 
     @Autowired
-    private AbstractService<DtoClass> service;
+    private AbstractService<DtoClass, EntityClass> service;
 
     @Autowired
-    @Lazy
-    @FormType("add")
-    private AbstractForm<DtoClass> addForm;
+    protected AbstractForm<DtoClass, EntityClass> windowForm;
 
     @Autowired
-    @Lazy
-    @FormType("edit")
-    private AbstractForm<DtoClass> editForm;
-
     protected Grid<DtoClass> grid;
-    private Button addButton;
+
+    protected Button addButton;
     private Button editButton;
     private Button deleteButton;
     protected TextField filterTextField;
+    protected CloseFormFunction closeFunc;
 
     @PostConstruct
-    public void initContent() {
+    private void initContent() {
         this.setSizeFull();
         HorizontalLayout menuLayout = new HorizontalLayout();
 
@@ -50,7 +47,8 @@ public abstract class AbstractAdministrateBookListView<DtoClass extends Abstract
         menuLayout.addComponent(deleteButton);
         menuLayout.addComponent(filterTextField);
 
-        setGrid();
+        setupGrid();
+        setCloseFunc();
 
         addComponent(menuLayout);
         addComponent(grid);
@@ -59,14 +57,16 @@ public abstract class AbstractAdministrateBookListView<DtoClass extends Abstract
         this.setExpandRatio(grid, 15);
     }
 
-    private void setAddButton() {
-        addButton = new Button("Add");
-        addButton.addClickListener(clickEvent -> getUI().addWindow(addForm));
-    }
+    protected abstract void setAddButton();
 
     private void setEditButton() {
         editButton = new Button("Edit");
-        editButton.addClickListener(clickEvent -> getUI().addWindow(editForm));
+        editButton.addClickListener(clickEvent -> {
+            DtoClass dto = grid.getSelectedItems().iterator().next();
+            windowForm.init(dto, closeFunc);
+            getUI().addWindow(windowForm);
+            grid.deselectAll();
+        });
         editButton.setEnabled(false);
     }
 
@@ -77,17 +77,14 @@ public abstract class AbstractAdministrateBookListView<DtoClass extends Abstract
                 service.delete(bookDtoGrid.getId());
             }
             grid.deselectAll();
+            grid.getDataProvider().refreshAll();
         });
         deleteButton.setEnabled(false);
     }
 
     protected abstract void setFilterTextField();
 
-    private void setGrid() {
-        grid = new Grid<>();
-        grid.setSelectionMode(Grid.SelectionMode.MULTI);
-        grid.setSizeFull();
-
+    private void setupGrid() {
         setGridColumns();
 
         grid.setDataProvider(new CallbackDataProvider<DtoClass, String>(
@@ -103,4 +100,11 @@ public abstract class AbstractAdministrateBookListView<DtoClass extends Abstract
     }
 
     protected abstract void setGridColumns();
+
+    private void setCloseFunc() {
+        closeFunc = () -> {
+            grid.deselectAll();
+            grid.getDataProvider().refreshAll();
+        };
+    }
 }

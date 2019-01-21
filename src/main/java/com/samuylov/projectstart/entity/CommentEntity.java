@@ -11,10 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 @Table(name = "COMMENT")
-public class CommentEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CommentEntity extends AbstractEntity {
 
     @NotNull
     private String text;
@@ -24,7 +21,7 @@ public class CommentEntity {
     private Date date;
 
     @NotNull
-    private String nickName;
+    private String name;
 
     @NotNull
     private Long bookId;

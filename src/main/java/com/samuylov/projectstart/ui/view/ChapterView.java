@@ -16,15 +16,10 @@ public class ChapterView extends VerticalLayout implements View {
     public static final String NAME = "chapter";
 
     @Autowired
-    private BookService bookService;
-
-    @Autowired
     private ChapterService chapterService;
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent event) {
-        //setSizeFull();
-
         final String[] params = event.getParameters().split("/");
         final Long bookId = Long.parseLong(params[0]);
         final Long chapterId = Long.parseLong(params[1]);

@@ -1,22 +1,24 @@
 package com.samuylov.projectstart.ui.view;
 
-import com.samuylov.projectstart.dto.UserDto;
-import com.samuylov.projectstart.entity.UserEntity;
+import com.samuylov.projectstart.dto.ReviewDto;
+import com.samuylov.projectstart.entity.ReviewEntity;
 import com.vaadin.data.provider.ConfigurableFilterDataProvider;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.spring.annotation.ViewScope;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.TextField;
 
-@SpringView(name = EditUserView.NAME)
-public class EditUserView extends AbstractAdministrateBookListView<UserDto, UserEntity> {
+@SpringView(name = EditReviewView.NAME)
+@ViewScope
+public class EditReviewView extends AbstractAdministrateBookListView<ReviewDto, ReviewEntity> {
 
-    public static final String NAME = "usersEditor";
+    public static final String NAME = "reviewsEditor";
 
     @Override
     protected void setAddButton() {
         addButton = new Button("Add");
         addButton.addClickListener(clickEvent -> {
-            windowForm.init(new UserDto(), closeFunc);
+            windowForm.init(new ReviewDto(), closeFunc);
             getUI().addWindow(windowForm);
         });
     }
@@ -26,16 +28,17 @@ public class EditUserView extends AbstractAdministrateBookListView<UserDto, User
         filterTextField = new TextField();
         filterTextField.setPlaceholder("Filter by name...");
         filterTextField.addValueChangeListener(valueChangeEvent -> {
-            ((ConfigurableFilterDataProvider<UserDto, Void, String>)
+            ((ConfigurableFilterDataProvider<ReviewDto, Void, String>)
                     grid.getDataProvider()).setFilter(valueChangeEvent.getValue());
         });
     }
 
     @Override
     protected void setGridColumns() {
-        grid.addColumn(UserDto::getId).setCaption("Id");
-        grid.addColumn(UserDto::getName).setCaption("Name");
-        grid.addColumn(UserDto::getPassword).setCaption("Password");
-        grid.addColumn(UserDto::getRole).setCaption("Role");
+        grid.addColumn(ReviewDto::getId).setCaption("Id");
+        grid.addColumn(ReviewDto::getBookId).setCaption("Book id");
+        grid.addColumn(ReviewDto::getName).setCaption("NickName");
+        grid.addColumn(ReviewDto::getText).setCaption("Text");
+        grid.addColumn(ReviewDto::getDate).setCaption("Date");
     }
 }

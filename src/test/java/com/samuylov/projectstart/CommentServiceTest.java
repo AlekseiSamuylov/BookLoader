@@ -30,7 +30,7 @@ public class CommentServiceTest {
         final CommentEntity commentEntity = new CommentEntity();
         commentEntity.setId(1L);
         commentEntity.setText("text");
-        commentEntity.setNickName("artur");
+        commentEntity.setName("artur");
         commentEntity.setDate(new Date());
         commentEntity.setBookId(1L);
         when(commentRepository.findAllByBookIdOrderByDateDesc(anyLong())).

@@ -1,62 +1,71 @@
 package com.samuylov.projectstart.service;
 
-import com.samuylov.projectstart.converter.ChapterConverter;
+import com.samuylov.projectstart.converter.DtoEntityConverter;
 import com.samuylov.projectstart.dto.ChapterDto;
 import com.samuylov.projectstart.entity.ChapterEntity;
 import com.samuylov.projectstart.repository.ChapterRepository;
-import com.vaadin.data.provider.Query;
-import lombok.AllArgsConstructor;
-import org.springframework.data.domain.PageRequest;
+import com.samuylov.projectstart.repository.NamedEntityRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-@AllArgsConstructor
 @Service
-public class ChapterService extends AbstractService<ChapterDto> implements FindElementsService<ChapterDto> {
+public class ChapterService extends AbstractService<ChapterDto, ChapterEntity> implements FindElementsService<ChapterDto> {
 
-    private final ChapterRepository chapterRepository;
-    private final ChapterConverter chapterConverter;
+    @Autowired
+    public ChapterService(final NamedEntityRepository<ChapterEntity> repository,
+                          final DtoEntityConverter<ChapterDto, ChapterEntity> converter) {
+        super(repository, converter);
+    }
 
     @Override
     public void create(final ChapterDto chapterDto) {
-        chapterRepository.save(chapterConverter.convertToEntity(chapterDto));
+        repository.save(converter.convertToEntity(chapterDto));
     }
 
     @Override
     public void update(final Long chapterId, final ChapterDto chapterDto) {
-        final ChapterEntity oldChapter = chapterRepository.findByBookIdAndId(chapterDto.getBookId(), chapterId);
+        final ChapterEntity oldChapter = ((ChapterRepository) repository).findByBookIdAndId(chapterDto.getBookId(), chapterId);
 
-        final ChapterEntity chapterEntity = chapterConverter.convertToEntity(chapterDto);
+        final ChapterEntity chapterEntity = converter.convertToEntity(chapterDto);
         oldChapter.setName(chapterEntity.getName());
         oldChapter.setText(chapterEntity.getText());
         oldChapter.setNumber(chapterEntity.getNumber());
-        chapterRepository.save(oldChapter);
+        repository.save(oldChapter);
+    }
+
+    @Override
+    public void save(final ChapterDto chapterDto) {
+        if (chapterDto.getId() == null){
+            create(chapterDto);
+        } else {
+            update(chapterDto.getId(), chapterDto);
+        }
     }
 
     @Override
     public void delete(final Long chapterId) {
-        chapterRepository.deleteById(chapterId);
+        repository.deleteById(chapterId);
     }
 
     @Override
     public List<ChapterDto> getList() {
-        return chapterRepository.findAll().stream().map(chapterConverter::convertToDto).collect(Collectors.toList());
+        return repository.findAll().stream().map(converter::convertToDto).collect(Collectors.toList());
     }
 
     @Override
     public List<ChapterDto> getAllByBookId(final Long bookId) {
-        return chapterRepository.findAllByBookId(bookId).stream().map(chapterConverter::convertToDto).collect(Collectors.toList());
+        return ((ChapterRepository) repository).findAllByBookId(bookId).stream().map(converter::convertToDto).collect(Collectors.toList());
     }
 
     public ChapterDto getChapterByBookIdAndChapterId(final Long bookId, final Long chapterNumber) {
-        return chapterConverter.convertToDto(chapterRepository.findByBookIdAndId(bookId, chapterNumber));
+        return converter.convertToDto(((ChapterRepository) repository).findByBookIdAndId(bookId, chapterNumber));
     }
 
     public void deleteAllChaptersByBookId(final Long bookId) {
-        chapterRepository.deleteAllByBookId(bookId);
+        ((ChapterRepository) repository).deleteAllByBookId(bookId);
     }
 
     public Long getPrevChapterId(final Long bookId, final Long currentChapterId) {
@@ -93,13 +102,5 @@ public class ChapterService extends AbstractService<ChapterDto> implements FindE
         }
 
         return currentChapterPosition;
-    }
-
-    @Override
-    public Stream<ChapterDto> findWithPagination(final Query<ChapterDto, String> query) {
-        final PageRequest pageRequest = preparePageRequest(query);
-        final List<ChapterDto> items = chapterRepository.findAll(pageRequest)
-                .stream().map(chapterConverter::convertToDto).collect(Collectors.toList());
-        return items.stream();
     }
 }

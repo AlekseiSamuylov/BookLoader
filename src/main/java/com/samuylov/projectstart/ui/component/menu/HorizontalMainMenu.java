@@ -25,17 +25,16 @@ public class HorizontalMainMenu extends HorizontalLayout implements MainMenu {
         Button editUsersButton = createNavigationButton("Edit users", EditUserView.NAME);
         Button editBooksButton = createNavigationButton("Edit books", EditBookView.NAME);
         Button editChaptersButton = createNavigationButton("Edit chapters", EditChapterView.NAME);
-        Button editCommunityDataButton =
-                createNavigationButton("Edit comments & reviews", EditCommunityDataView.NAME);
+        Button editCommentsButton = createNavigationButton("Edit comments", EditCommentView.NAME);
+        Button editReviewsButton = createNavigationButton("Edit reviews", EditReviewView.NAME);
         Button booksListViewButton = createNavigationButton("All books", BooksListView.NAME);
-        //Button commentsListViewButton = createNavigationButton("Comments", CommentsListView.NAME);
 
         addComponent(editUsersButton);
         addComponent(editBooksButton);
         addComponent(editChaptersButton);
-        addComponent(editCommunityDataButton);
+        addComponent(editCommentsButton);
+        addComponent(editReviewsButton);
         addComponent(booksListViewButton);
-        //addComponent(commentsListViewButton);
         addComponent(getBookSearchComboBox());
     }
 

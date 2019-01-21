@@ -10,7 +10,7 @@ import java.util.List;
 public class BookDto extends AbstractDto{
     private String name;
     private String description;
-    private Integer rating;
+    private Long rating;
     private List<ChapterDto> chapters;
     private List<ReviewDto> reviews;
     private List<CommentDto> comments;

@@ -10,6 +10,6 @@ import java.util.Date;
 public abstract class CommunityAbstractDto extends AbstractDto {
     private String text;
     private Date date;
-    private String nickName;
+    private String name;
     private Long bookId;
 }

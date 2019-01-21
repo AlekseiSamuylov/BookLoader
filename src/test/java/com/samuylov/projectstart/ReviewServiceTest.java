@@ -30,7 +30,7 @@ public class ReviewServiceTest {
         final ReviewEntity reviewEntity = new ReviewEntity();
         reviewEntity.setId(1L);
         reviewEntity.setText("text");
-        reviewEntity.setNickName("artur");
+        reviewEntity.setName("artur");
         reviewEntity.setDate(new Date());
         reviewEntity.setBookId(1L);
         when(reviewRepository.findAllByBookIdOrderByDateDesc(anyLong())).

@@ -10,10 +10,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Entity
 @Table(name = "CHAPTER")
-public class ChapterEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class ChapterEntity extends AbstractEntity {
 
     @NotNull
     private Long number;

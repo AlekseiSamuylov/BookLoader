@@ -1,8 +1,10 @@
 package com.samuylov.projectstart.repository;
 
 import com.samuylov.projectstart.entity.UserEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+@Repository
+public interface UserRepository extends NamedEntityRepository<UserEntity> {
+
     UserEntity findFirstById(final Long userId);
 }

@@ -26,7 +26,7 @@ public class BookServiceTest {
         bookEntity.setId(1L);
         bookEntity.setName("book");
         bookEntity.setDescription("desc");
-        bookEntity.setRating(5);
+        bookEntity.setRating((long) 5);
         when(bookRepository.getOne(anyLong())).thenReturn(bookEntity);
     }
 }

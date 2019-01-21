@@ -1,19 +1,24 @@
 package com.samuylov.projectstart.ui.view;
 
 import com.samuylov.projectstart.dto.ChapterDto;
+import com.samuylov.projectstart.entity.ChapterEntity;
 import com.vaadin.data.provider.ConfigurableFilterDataProvider;
-import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.spring.annotation.SpringView;
-import com.vaadin.ui.Notification;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.TextField;
 
 @SpringView(name = EditChapterView.NAME)
-public class EditChapterView extends AbstractAdministrateBookListView<ChapterDto> {
+public class EditChapterView extends AbstractAdministrateBookListView<ChapterDto, ChapterEntity> {
 
     public static final String NAME = "chapterEditor";
 
     @Override
-    public void enter(ViewChangeListener.ViewChangeEvent event) {
+    protected void setAddButton() {
+        addButton = new Button("Add");
+        addButton.addClickListener(clickEvent -> {
+            windowForm.init(new ChapterDto(), closeFunc);
+            getUI().addWindow(windowForm);
+        });
     }
 
     @Override

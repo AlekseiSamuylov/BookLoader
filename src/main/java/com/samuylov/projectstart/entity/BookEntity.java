@@ -10,10 +10,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Entity
 @Table(name = "BOOK")
-public class BookEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class BookEntity extends AbstractEntity {
 
     @NotNull
     private String name;
@@ -22,5 +19,5 @@ public class BookEntity {
     private String description;
 
     @NotNull
-    private Integer rating;
+    private Long rating;
 }

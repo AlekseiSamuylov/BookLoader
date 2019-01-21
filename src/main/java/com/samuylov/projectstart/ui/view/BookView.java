@@ -40,7 +40,7 @@ public class BookView extends VerticalLayout implements View {
 
         Label bookName = getLabel(book.getName());
         Label bookDescription = getLabel(book.getDescription());
-        Label bookRating = getLabel(Integer.toString(book.getRating()));
+        Label bookRating = getLabel(Long.toString(book.getRating()));
 
         ItemListField<ReviewDto> reviewsList = new ItemCommunityListField<>(reviewService.getAllByBookId(book.getId()));
         reviewsList.setVisible(false);
