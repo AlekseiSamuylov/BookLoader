@@ -7,9 +7,7 @@ import com.vaadin.data.Binder;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.RadioButtonGroup;
-import com.vaadin.ui.TextField;
+import com.vaadin.ui.*;
 
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
@@ -91,5 +89,13 @@ public class UserForm extends AbstractForm<UserDto, UserEntity> {
         binder.forField(passwordTextField)
                 .asRequired("Enter password")
                 .bind(UserDto::getPassword, UserDto::setPassword);
+    }
+
+    public void hideRoleField() {
+        radioButtonGroup.setVisible(false);
+    }
+
+    public Button getSaveButton() {
+        return saveChangesButton;
     }
 }

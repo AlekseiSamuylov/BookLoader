@@ -10,7 +10,6 @@ import com.vaadin.ui.TextField;
 
 @SpringView(name = EditBookView.NAME)
 @ViewScope
-//@Secured("ADMIN")
 public class EditBookView extends AbstractAdministrateBookListView<BookDto, BookEntity> {
 
     public static final String NAME = "booksEditor";

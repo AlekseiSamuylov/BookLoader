@@ -12,6 +12,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -51,6 +52,10 @@ public class UserService extends AbstractService<UserDto, UserEntity> {
 
     public UserDto getUserById(final Long userId) {
         return converter.convertToDto(((UserRepository) repository).findFirstById(userId));
+    }
+
+    public Optional<UserEntity> getUserByName(final String name) {
+        return ((UserRepository) repository).findByName(name);
     }
 
     @Override

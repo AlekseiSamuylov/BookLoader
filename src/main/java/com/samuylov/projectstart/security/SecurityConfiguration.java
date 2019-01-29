@@ -1,46 +1,28 @@
 package com.samuylov.projectstart.security;
 
-//@Configuration
-//@EnableWebSecurity
-public class SecurityConfiguration {//extends WebSecurityConfigurerAdapter {
-    //@Autowired
-//    private UserDetailsService detailsService;
-//
-//    //@Autowired
-//    private AuthenticationSuccessHandler successHandler;
-//
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(detailsService).passwordEncoder(passwordEncoder());
-//    }
-//
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                .antMatchers().hasAnyAuthority()
-//         .and()
-//         .formLogin().successHandler(successHandler);
-//         http.csrf().disable();
-//
-//         //        http.authorizeRequests()
-////                .antMatchers("/VAADIN/**", "/vaadinServlet/**", "/**").permitAll()
-////                .antMatchers("bookReader/**", "/**")
-////                .hasAnyAuthority()
-////                .and()
-////                .formLogin().successHandler(successHandler).permitAll()
-////                .and()
-////                .logout();
-////        http.csrf().disable();
-//    }
-//
-//    //@Bean
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
-//
-//    //@Bean
-//    public ViewAccessControl accessControl() {
-//        return new SecuredViewAccessControl();
-//    }
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.vaadin.spring.security.annotation.EnableVaadinManagedSecurity;
+import org.vaadin.spring.security.config.AuthenticationManagerConfigurer;
 
+@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private UserDetailsService detailsService;
+
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        super.configure(http);
+    }
 }

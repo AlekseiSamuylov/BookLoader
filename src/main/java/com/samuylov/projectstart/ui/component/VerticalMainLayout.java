@@ -40,6 +40,11 @@ public class VerticalMainLayout extends VerticalLayout implements MainLayout, Vi
     }
 
     @Override
+    public MainMenu getMenu() {
+        return menu;
+    }
+
+    @Override
     public ViewDisplay getViewContainer() {
         return this;
     }
