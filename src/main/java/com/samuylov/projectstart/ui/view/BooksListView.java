@@ -28,6 +28,7 @@ public class BooksListView extends VerticalLayout implements View {
     private void setGrid() {
         grid = new Grid<>();
         grid.setSizeFull();
+        grid.setCaption("Click on book");
 
         grid.addColumn(BookDto::getRating).setCaption("Rating");
         grid.addColumn(BookDto::getName).setCaption("Book");

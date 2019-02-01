@@ -47,7 +47,7 @@ public class BookView extends VerticalLayout implements View {
         Button reviewList = getButton("Reviews", reviewsList);
 
         ItemListField<ChapterDto> chaptersList = new ItemChapterListField(chapterService.getAllByBookId(book.getId()));
-        Button chapterList = getButton("Chapters", chaptersList);
+        Button chapterList = getButton("Chapters (click on chapter)", chaptersList);
 
         ItemListField<CommentDto> commentsList = new ItemCommunityListField<>(commentService.getAllByBookId(book.getId()));
         commentsList.setVisible(false);

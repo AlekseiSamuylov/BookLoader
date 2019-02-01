@@ -10,5 +10,5 @@ public interface UserRepository extends NamedEntityRepository<UserEntity> {
 
     UserEntity findFirstById(final Long userId);
 
-    Optional<UserEntity> findByName(final String name);
+    UserEntity findByName(final String name);
 }

@@ -54,8 +54,8 @@ public class UserService extends AbstractService<UserDto, UserEntity> {
         return converter.convertToDto(((UserRepository) repository).findFirstById(userId));
     }
 
-    public Optional<UserEntity> getUserByName(final String name) {
-        return ((UserRepository) repository).findByName(name);
+    public UserDto getUserByName(final String name) {
+        return converter.convertToDto(((UserRepository) repository).findByName(name));
     }
 
     @Override
